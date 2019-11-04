@@ -6823,6 +6823,9 @@ bool RemoveBlockIndex(CBlockIndex *pindex)
 
 void CleanBlockIndex()
 {
+    unsigned int cleanTimeout = gArgs.GetArg("-cleanblockindextimeout", DEFAULT_CLEANBLOCKINDEXTIMEOUT) * 1000;
+    if(cleanTimeout == 0) cleanTimeout = DEFAULT_CLEANBLOCKINDEXTIMEOUT * 1000;
+
     while(!ShutdownRequested())
     {
         {
@@ -6859,7 +6862,7 @@ void CleanBlockIndex()
             }
         }
 
-        MilliSleep(6000);
+        MilliSleep(cleanTimeout);
     }
 }
 
