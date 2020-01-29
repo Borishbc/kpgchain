@@ -32,9 +32,9 @@ static const bool DEFAULT_STAKE = true;
 static const bool DEFAULT_STAKE_CACHE = true;
 
 //How many seconds to look ahead and prepare a block for staking
-//Look ahead up to 3 "timeslots" in the future, 48 seconds
+//Look ahead up to 3 "timeslots" in the future, 32 seconds
 //Reduce this to reduce computational waste for stakers, increase this to increase the amount of time available to construct full blocks
-static const int32_t MAX_STAKE_LOOKAHEAD = 16 * 3;
+static const int32_t MAX_STAKE_LOOKAHEAD = 16 * 2;
 
 //Will not add any more contracts when GetAdjustedTime() >= nTimeLimit-BYTECODE_TIME_BUFFER
 //This does not affect non-contract transactions
@@ -243,7 +243,7 @@ public:
     explicit BlockAssembler(const CChainParams& params);
     BlockAssembler(const CChainParams& params, const Options& options);
 
-///////////////////////////////////////////// // qtum
+///////////////////////////////////////////// // kpg
     ByteCodeExecResult bceResult;
     uint64_t minGasPrice = 1;
     uint64_t hardBlockGasLimit;
@@ -252,7 +252,7 @@ public:
 /////////////////////////////////////////////
 
     // The original constructed reward tx (either coinbase or coinstake) without gas refund adjustments
-    CMutableTransaction originalRewardTx; // qtum
+    CMutableTransaction originalRewardTx; // kpg
 
     //When GetAdjustedTime() exceeds this, no more transactions will attempt to be added
     int32_t nTimeLimit;

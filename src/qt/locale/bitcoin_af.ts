@@ -62,12 +62,12 @@
         <translation>Ontvanger adresse</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Hierdie is die adresse vanwaar u Qtum betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
+        <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Hierdie is die adresse vanwaar u KPG betalings stuur. U moet altyd die bedrag en die adres van die ontvanger nagaan voordat u enige munte stuur.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Hierdie is die adresse waar u Qtums sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
+        <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Hierdie is die adresse waar u KPGs sal ontvang. Ons beveel aan dat u 'n nuwe adres kies vir elke transaksie</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -232,7 +232,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Teken &amp;boodskap...</translation>
@@ -322,8 +322,8 @@
         <translation>Besig met herindeksering van blokke op hardeskyf...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Stuur munte na 'n Qtum adres</translation>
+        <source>Send coins to a KPG address</source>
+        <translation>Stuur munte na 'n KPG adres</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -346,8 +346,8 @@
         <translation>&amp;Verifieer boodskap...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -370,12 +370,12 @@
         <translation>Kodifiseer die private sleutes wat aan jou beursie gekoppel is.</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Onderteken boodskappe met u Qtum adresse om u eienaarskap te bewys</translation>
+        <source>Sign messages with your KPG addresses to prove you own them</source>
+        <translation>Onderteken boodskappe met u KPG adresse om u eienaarskap te bewys</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde Qtum adresse</translation>
+        <source>Verify messages to ensure they were signed with specified KPG addresses</source>
+        <translation>Verifieër boodskappe om seker te maak dat dit met die gespesifiseerde KPG adresse</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -504,8 +504,8 @@
         <translation>Inkomende transaksie</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>'N fatale fout het voorgekom. Qtum kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
+        <source>A fatal error occurred. KPG can no longer continue safely and will quit.</source>
+        <translation>'N fatale fout het voorgekom. KPG kan nie meer veilig voortgaan nie en sal nou toemaak.</translation>
     </message>
 </context>
 <context>
@@ -694,8 +694,8 @@
         <translation>Wysig stuur adres</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>Die ingevoerde adres "%1" is nie 'n geldige Qtum adres nie.</translation>
+        <source>The entered address "%1" is not a valid KPG address.</source>
+        <translation>Die ingevoerde adres "%1" is nie 'n geldige KPG adres nie.</translation>
     </message>
     <message>
         <source>Could not unlock wallet.</source>
@@ -767,8 +767,8 @@
         <translation>Gebruik 'n persoonlike data gids:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>The wallet will also be stored in this directory.</source>
@@ -1120,8 +1120,8 @@
         <translation>Bedrag</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Voer in 'n Qtum adres (bv. %1)</translation>
+        <source>Enter a KPG address (e.g. %1)</source>
+        <translation>Voer in 'n KPG adres (bv. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1697,8 +1697,8 @@ transaksievertragingsrisiko.</translation>
         <translation>Betalings versoek verstryk.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Waarskuwing: Ongeldige Qtumadres</translation>
+        <source>Warning: Invalid KPG address</source>
+        <translation>Waarskuwing: Ongeldige KPGadres</translation>
     </message>
     <message>
         <source>The address you selected for change is not part of this wallet. Any or all funds in your wallet may be sent to this address. Are you sure?</source>
@@ -1730,8 +1730,8 @@ Is u seker?</translation>
         <translation>Hierdie is 'n gewone betaling</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Die Qtumadres waarheen die betaling gestuur word</translation>
+        <source>The KPG address to send the payment to</source>
+        <translation>Die KPGadres waarheen die betaling gestuur word</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2037,10 +2037,10 @@ word die fooi eweredig verdeel.</translation>
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Kern</translation>
+        <source>KPG Core</source>
+        <translation>KPG Kern</translation>
     </message>
     <message>
         <source>Error loading %s</source>

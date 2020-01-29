@@ -104,7 +104,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <source>Synchronizing with network...</source>
         <translation>Võrguga sünkroniseerimine...</translation>
@@ -130,8 +130,8 @@
         <translation>Kõvakettal olevate plokkide reindekseerimine...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -261,8 +261,8 @@
         <translation>Tere tulemast</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>Error</source>
@@ -753,10 +753,10 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>KPG Core</source>
+        <translation>KPG Core</translation>
     </message>
     <message>
         <source>Information</source>

@@ -179,7 +179,7 @@ static const uint64_t DEFAULT_GAS_LIMIT_OP_SEND=250000;
 static const CAmount DEFAULT_GAS_PRICE=0.00000040*COIN;
 static const CAmount MAX_RPC_GAS_PRICE=0.00000100*COIN;
 
-static const size_t MAX_CONTRACT_VOUTS = 1000; // qtum
+static const size_t MAX_CONTRACT_VOUTS = 1000; // kpg
 
 struct BlockHasher
 {
@@ -366,7 +366,7 @@ std::string FormatStateMessage(const CValidationState &state);
 /** Get the BIP9 state for a given deployment at the current tip. */
 ThresholdState VersionBitsTipState(const Consensus::Params& params, Consensus::DeploymentPos pos);
 
-//////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////// // kpg
 struct CHeightTxIndexIteratorKey {
     unsigned int height;
 
@@ -853,7 +853,7 @@ public:
 void InitScriptExecutionCache();
 
 #ifdef ENABLE_BITCORE_RPC
-///////////////////////////////////////////////////////////////// // qtum
+///////////////////////////////////////////////////////////////// // kpg
 bool GetAddressIndex(uint256 addressHash, int type,
                      std::vector<std::pair<CAddressIndexKey, CAmount> > &addressIndex,
                      int start = 0, int end = 0);

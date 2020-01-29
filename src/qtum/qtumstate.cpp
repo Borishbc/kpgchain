@@ -10,7 +10,7 @@ using namespace dev::eth;
 
 QtumState::QtumState(u256 const& _accountStartNonce, OverlayDB const& _db, const string& _path, BaseState _bs) :
         State(_accountStartNonce, _db, _bs) {
-            dbUTXO = QtumState::openDB(_path + "/qtumDB", sha3(rlp("")), WithExisting::Trust);
+            dbUTXO = QtumState::openDB(_path + "/kpgDB", sha3(rlp("")), WithExisting::Trust);
 	        stateUTXO = SecureTrieDB<Address, OverlayDB>(&dbUTXO);
 }
 

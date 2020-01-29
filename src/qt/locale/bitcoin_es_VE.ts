@@ -62,12 +62,12 @@
         <translation>Direcciones de recepción</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son tus direcciones Qtum para realizar pagos. Verifica siempre el monto y la dirección de recepción antes de enviar monedas. </translation>
+        <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son tus direcciones KPG para realizar pagos. Verifica siempre el monto y la dirección de recepción antes de enviar monedas. </translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son tus direcciones Qtum para recibir pagos. Es recomendable usar una nueva dirección de recibo para cada transacción.</translation>
+        <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son tus direcciones KPG para recibir pagos. Es recomendable usar una nueva dirección de recibo para cada transacción.</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -170,7 +170,7 @@
     <name>BanTableModel</name>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -208,8 +208,8 @@
         <translation>Reindexando bloques en el disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar monedas a una dirección Qtum</translation>
+        <source>Send coins to a KPG address</source>
+        <translation>Enviar monedas a una dirección KPG</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -224,8 +224,8 @@
         <translation>Abre la consola de depuración y diágnostico</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -248,12 +248,12 @@
         <translation>Encriptar las llaves privadas que pertenecen a tu billetera</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Firma mensajes con tus direcciones Qtum para probar que eres dueño de ellas</translation>
+        <source>Sign messages with your KPG addresses to prove you own them</source>
+        <translation>Firma mensajes con tus direcciones KPG para probar que eres dueño de ellas</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones Qtum especificas</translation>
+        <source>Verify messages to ensure they were signed with specified KPG addresses</source>
+        <translation>Verificar mensajes para asegurar que estaban firmados con direcciones KPG especificas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -491,8 +491,8 @@
         <translation>Usa un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -775,10 +775,10 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>KPG Core</source>
+        <translation>KPG Core</translation>
     </message>
     <message>
         <source>Information</source>

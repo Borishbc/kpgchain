@@ -42,11 +42,11 @@
         <translation>接收地址</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation>这些是你的QTUM支付地址。在发送之前，一定要核对金额和接收地址。</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation>这些是您的QTUM接收地址。建议每个交易使用一个新的接收地址。</translation>
     </message>
     <message>
@@ -200,7 +200,7 @@
     </message>
     </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>签名 &amp;消息...</translation>
@@ -258,7 +258,7 @@
         <translation>启用代理:%1</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
+        <source>Send coins to a KPG address</source>
         <translation>发送QTUM到一个QTUM地址</translation>
     </message>
     <message>
@@ -282,8 +282,8 @@
         <translation>&amp;验证消息...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -306,11 +306,11 @@
         <translation>加密您的钱包私钥</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
+        <source>Sign messages with your KPG addresses to prove you own them</source>
         <translation>用您的QTUM地址签名信息，以证明拥有它们</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
+        <source>Verify messages to ensure they were signed with specified KPG addresses</source>
         <translation>验证消息，确保它们是用指定的QTUM地址签名的</translation>
     </message>
     <message>
@@ -346,7 +346,7 @@
         <translation>&amp;命令行选项</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to KPG network</source>
         <translation><numerusform>%n 活动的QTUM网络连接</numerusform></translation>
     </message>
     <message>
@@ -386,8 +386,8 @@
         <translation>&amp;接受地址</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation>显示%1帮助消息以获得可能包含Qtum命令行选项的列表</translation>
+        <source>Show the %1 help message to get a list with possible KPG command-line options</source>
+        <translation>显示%1帮助消息以获得可能包含KPG命令行选项的列表</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -442,8 +442,8 @@
         <translation>钱包是&lt;b&gt;加密的&lt;/b&gt;，目前&lt;b&gt;已锁定&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>发生了致命错误。Qtum无法继续安全运行，将退出。</translation>
+        <source>A fatal error occurred. KPG can no longer continue safely and will quit.</source>
+        <translation>发生了致命错误。KPG无法继续安全运行，将退出。</translation>
     </message>
 </context>
 <context>
@@ -512,7 +512,7 @@
         <translation>与此地址列表项关联的地址。只能修改为发送地址。</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
+        <source>The entered address "%1" is not a valid KPG address.</source>
         <translation>输入的地址"%1"不是有效的QTUM地址。</translation>
     </message>
     <message>
@@ -529,8 +529,8 @@
 <context>
     <name>Intro</name>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>Error</source>
@@ -726,7 +726,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation><numerusform>估计在%n块内确认。</numerusform></translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid KPG address</source>
         <translation>警告：QTUM地址无效</translation>
     </message>
     <message>
@@ -749,7 +749,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>这是一个标准的付款方式。</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
+        <source>The KPG address to send the payment to</source>
         <translation>支付到的QTUM地址</translation>
     </message>
     <message>
@@ -765,7 +765,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
         <translation>输入此地址的标签，将其添加到使用的地址列表中</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
+        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KPG network.</source>
         <translation>附在QTUM上的消息:URI将与交易一起存储，供参考。注意：此信息不会通过QTUM网络发送。</translation>
     </message>
     <message>
@@ -868,7 +868,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
         <source>Information</source>
         <translation>消息</translation>

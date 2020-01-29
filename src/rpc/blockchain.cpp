@@ -196,8 +196,8 @@ UniValue blockheaderToJSON(const CBlockIndex* tip, const CBlockIndex* blockindex
     result.pushKV("difficulty", GetDifficulty(blockindex));
     result.pushKV("chainwork", blockindex->nChainWork.GetHex());
     result.pushKV("nTx", (uint64_t)blockindex->nTx);
-    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", blockindex->hashStateRoot.GetHex()); // kpg
+    result.pushKV("hashUTXORoot", blockindex->hashUTXORoot.GetHex()); // kpg
 
     if (blockindex->pprev)
         result.pushKV("previousblockhash", blockindex->pprev->GetBlockHash().GetHex());
@@ -225,8 +225,8 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     result.pushKV("version", block.nVersion);
     result.pushKV("versionHex", strprintf("%08x", block.nVersion));
     result.pushKV("merkleroot", block.hashMerkleRoot.GetHex());
-    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // qtum
-    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // qtum
+    result.pushKV("hashStateRoot", block.hashStateRoot.GetHex()); // kpg
+    result.pushKV("hashUTXORoot", block.hashUTXORoot.GetHex()); // kpg
     UniValue txs(UniValue::VARR);
     for(const auto& tx : block.vtx)
     {
@@ -263,7 +263,7 @@ UniValue blockToJSON(const CBlock& block, const CBlockIndex* tip, const CBlockIn
     return result;
 }
 
-//////////////////////////////////////////////////////////////////////////// // qtum
+//////////////////////////////////////////////////////////////////////////// // kpg
 UniValue executionResultToJSON(const dev::eth::ExecutionResult& exRes)
 {
     UniValue result(UniValue::VOBJ);
@@ -1223,7 +1223,7 @@ static UniValue getblock(const JSONRPCRequest& request)
     return blockToJSON(block, chainActive.Tip(), pblockindex, verbosity >= 2);
 }
 
-////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////// // kpg
 UniValue callcontract(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() < 2 || request.params.size() > 4)
@@ -2160,7 +2160,7 @@ UniValue gettxout(const JSONRPCRequest& request)
             "     \"hex\" : \"hex\",        (string) \n"
             "     \"reqSigs\" : n,          (numeric) Number of required signatures\n"
             "     \"type\" : \"pubkeyhash\", (string) The type, eg pubkeyhash\n"
-            "     \"addresses\" : [          (array of string) array of qtum addresses\n"
+            "     \"addresses\" : [          (array of string) array of KPG addresses\n"
             "        \"address\"     (string) qtum address\n"
             "        ,...\n"
             "     ]\n"

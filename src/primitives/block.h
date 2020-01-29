@@ -30,8 +30,8 @@ public:
     uint32_t nTime;
     uint32_t nBits;
     uint32_t nNonce;
-    uint256 hashStateRoot; // qtum
-    uint256 hashUTXORoot; // qtum
+    uint256 hashStateRoot; // kpg
+    uint256 hashUTXORoot; // kpg
     // proof-of-stake specific fields
     COutPoint prevoutStake;
 
@@ -45,8 +45,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // kpg
+        READWRITE(hashUTXORoot); // kpg
         READWRITE(prevoutStake);
     }
 };
@@ -72,8 +72,8 @@ public:
         READWRITE(nTime);
         READWRITE(nBits);
         READWRITE(nNonce);
-        READWRITE(hashStateRoot); // qtum
-        READWRITE(hashUTXORoot); // qtum
+        READWRITE(hashStateRoot); // kpg
+        READWRITE(hashUTXORoot); // kpg
         READWRITE(prevoutStake);
         READWRITE(vchBlockSig);
     }
@@ -86,8 +86,8 @@ public:
         nTime = 0;
         nBits = 0;
         nNonce = 0;
-        hashStateRoot.SetNull(); // qtum
-        hashUTXORoot.SetNull(); // qtum
+        hashStateRoot.SetNull(); // kpg
+        hashUTXORoot.SetNull(); // kpg
         vchBlockSig.clear();
         prevoutStake.SetNull();
     }
@@ -196,8 +196,8 @@ public:
         block.nTime          = nTime;
         block.nBits          = nBits;
         block.nNonce         = nNonce;
-        block.hashStateRoot  = hashStateRoot; // qtum
-        block.hashUTXORoot   = hashUTXORoot; // qtum
+        block.hashStateRoot  = hashStateRoot; // kpg
+        block.hashUTXORoot   = hashUTXORoot; // kpg
         block.vchBlockSig    = vchBlockSig;
         block.prevoutStake   = prevoutStake;
         return block;

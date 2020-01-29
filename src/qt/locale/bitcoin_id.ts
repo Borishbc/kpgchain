@@ -1081,7 +1081,7 @@
     </message>
     </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kpg-core</name>
     <message>
         <source>Information</source>
         <translation>Informasi</translation>

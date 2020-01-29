@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=0.17.6
+Name=KPG Core
+Comment=Connect to the KPG P2P Network
+Exec=kpg-qt %u
+Terminal=false
+Type=Application
+Icon=qtum128
+MimeType=x-scheme-handler/kpg;
+Categories=Network;
+StartupWMClass=KPG-qt
+Name[en_US]=kpg-qt

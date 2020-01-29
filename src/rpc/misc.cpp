@@ -78,7 +78,7 @@ static UniValue validateaddress(const JSONRPCRequest& request)
 }
 
 #ifdef ENABLE_BITCORE_RPC
-/////////////////////////////////////////////////////////////////////// // qtum
+/////////////////////////////////////////////////////////////////////// // kpg
 UniValue getdgpinfo(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() != 0)
@@ -1258,7 +1258,7 @@ static UniValue echo(const JSONRPCRequest& request)
             RPCHelpMan{"echo|echojson ...",
                 "\nSimply echo back the input arguments. This command is for testing.\n"
                 "\nThe difference between echo and echojson is that echojson has argument conversion enabled in the client-side table in "
-                "qtum-cli and the GUI. There is no server-side difference.",
+                "kpg-cli and the GUI. There is no server-side difference.",
                 {},
                 RPCResults{},
                 RPCExamples{""},
@@ -1287,7 +1287,7 @@ static const CRPCCommand commands[] =
     { "hidden",             "echojson",               &echo,                   {"arg0","arg1","arg2","arg3","arg4","arg5","arg6","arg7","arg8","arg9"}},
 
 #ifdef ENABLE_BITCORE_RPC
-  /////////////////////////////////////////////////////////////////////////////////////////////////////////////// // qtum
+  /////////////////////////////////////////////////////////////////////////////////////////////////////////////// // kpg
     { "control",            "getdgpinfo",             &getdgpinfo,             {} },
     { "util",               "getaddresstxids",        &getaddresstxids,        {"addresses"} },
     { "util",               "getaddressdeltas",       &getaddressdeltas,       {"addresses"} },

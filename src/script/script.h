@@ -592,7 +592,7 @@ public:
     unsigned int GetSigOpCount(const CScript& scriptSig) const;
 
     bool IsPayToScriptHash() const;
-    ///////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////// // kpg
     bool IsPayToPubkey() const;
     bool IsPayToPubkeyHash() const;
     /////////////////////////////////////////////////

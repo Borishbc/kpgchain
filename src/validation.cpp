@@ -58,7 +58,7 @@
 #include <boost/thread.hpp>
 
 #if defined(NDEBUG)
-# error "Qtum cannot be compiled without assertions."
+# error "KPG cannot be compiled without assertions."
 #endif
 
 #define MICRO 0.000001
@@ -68,7 +68,7 @@
  * Global state
  */
 
- ////////////////////////////// qtum
+ ////////////////////////////// kpg
 #include <iostream>
 #include <bitset>
 #include "pubkey.h"
@@ -263,7 +263,7 @@ int nScriptCheckThreads = 0;
 std::atomic_bool fImporting(false);
 std::atomic_bool fReindex(false);
 #ifdef ENABLE_BITCORE_RPC
-bool fAddressIndex = false; // qtum
+bool fAddressIndex = false; // kpg
 #endif
 bool fLogEvents = false;
 bool fHavePruned = false;
@@ -290,7 +290,7 @@ std::atomic_bool g_is_mempool_loaded{false};
 /** Constant stuff for coinbase transactions we create: */
 CScript COINBASE_FLAGS;
 
-const std::string strMessageMagic = "Qtum Signed Message:\n";
+const std::string strMessageMagic = "KPG Signed Message:\n";
 
 // Internal stuff
 namespace {
@@ -760,7 +760,7 @@ static bool AcceptToMemoryPoolWorker(const CChainParams& chainparams, CTxMemPool
 
         dev::u256 txMinGasPrice = 0;
 
-        //////////////////////////////////////////////////////////// // qtum
+        //////////////////////////////////////////////////////////// // kpg
         if(!CheckOpSender(tx, chainparams, GetSpendHeight(view))){
             return state.DoS(100, false, REJECT_INVALID, "bad-txns-invalid-sender");
         }
@@ -1098,7 +1098,7 @@ static bool AcceptToMemoryPoolWorker(const CChainParams& chainparams, CTxMemPool
         // - the transaction is not dependent on any other transactions in the mempool
         bool validForFeeEstimation = !fReplacementTransaction && !bypass_limits && IsCurrentForFeeEstimation() && pool.HasNoInputsOf(tx);
 #ifdef ENABLE_BITCORE_RPC
-        //////////////////////////////////////////////////////////////// // qtum
+        //////////////////////////////////////////////////////////////// // kpg
         // Add memory address index
         if (fAddressIndex)
         {
@@ -1372,15 +1372,15 @@ bool ReadRawBlockFromDisk(std::vector<uint8_t>& block, const CBlockIndex* pindex
 CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
 {
     if(nHeight <= consensusParams.nLastPOWBlock)
-        return 20000 * COIN;
+        return 140000 * COIN;
 
     int halvings = (nHeight - consensusParams.nLastPOWBlock - 1) / consensusParams.nSubsidyHalvingInterval;
     // Force block reward to zero when right shift is undefined.
-    if (halvings >= 7)
+    if (halvings >= 33)
         return 0;
 
-    CAmount nSubsidy = 4 * COIN;
-    // Subsidy is cut in half every 985500 blocks which will occur approximately every 4 years.
+    CAmount nSubsidy = 70 * COIN;
+    // Subsidy is cut in half every 1971000 blocks which will occur approximately every 4 years.
     nSubsidy >>= halvings;
     return nSubsidy;
 }
@@ -1832,7 +1832,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     }
 
 #ifdef ENABLE_BITCORE_RPC
-    /////////////////////////////////////////////////////////// // qtum
+    /////////////////////////////////////////////////////////// // kpg
     std::vector<std::pair<CAddressIndexKey, CAmount> > addressIndex;
     std::vector<std::pair<CAddressUnspentKey, CAddressUnspentValue> > addressUnspentIndex;
     ///////////////////////////////////////////////////////////
@@ -1859,7 +1859,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
         }
 
 #ifdef ENABLE_BITCORE_RPC
-        /////////////////////////////////////////////////////////// // qtum
+        /////////////////////////////////////////////////////////// // kpg
         if (pfClean == NULL && fAddressIndex) {
 
             for (unsigned int k = tx.vout.size(); k-- > 0;) {
@@ -1926,8 +1926,8 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     // move best block pointer to prevout block
     view.SetBestBlock(pindex->pprev->GetBlockHash());
 
-    globalState->setRoot(uintToh256(pindex->pprev->hashStateRoot)); // qtum
-    globalState->setRootUTXO(uintToh256(pindex->pprev->hashUTXORoot)); // qtum
+    globalState->setRoot(uintToh256(pindex->pprev->hashStateRoot)); // kpg
+    globalState->setRootUTXO(uintToh256(pindex->pprev->hashUTXORoot)); // kpg
 
     if(pfClean == NULL && fLogEvents){
         pstorageresult->deleteResults(block.vtx);
@@ -1936,7 +1936,7 @@ DisconnectResult CChainState::DisconnectBlock(const CBlock& block, const CBlockI
     pblocktree->EraseStakeIndex(pindex->nHeight);
 
 #ifdef ENABLE_BITCORE_RPC
-    //////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////// // kpg
     if (pfClean == NULL && fAddressIndex) {
         if (!pblocktree->EraseAddressIndex(addressIndex)) {
             error("Failed to delete address index");
@@ -2764,7 +2764,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     assert(*pindex->phashBlock == block.GetHash());
     int64_t nTimeStart = GetTimeMicros();
 
-    ///////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////// // kpg
     QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
     globalSealEngine->setQtumSchedule(qtumDGP.getGasSchedule(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1) ));
     uint32_t sizeBlockDGP = qtumDGP.getBlockSize(pindex->nHeight + (pindex->nHeight+1 >= chainparams.GetConsensus().QIP7Height ? 0 : 1));
@@ -2784,7 +2784,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 
 
     // Move this check from CheckBlock to ConnectBlock as it depends on DGP values
-    if (block.vtx.empty() || block.vtx.size() > dgpMaxBlockSize || ::GetSerializeSize(block, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) > dgpMaxBlockSize) // qtum
+    if (block.vtx.empty() || block.vtx.size() > dgpMaxBlockSize || ::GetSerializeSize(block, PROTOCOL_VERSION | SERIALIZE_TRANSACTION_NO_WITNESS) > dgpMaxBlockSize) // kpg
         return state.DoS(100, false, REJECT_INVALID, "bad-blk-length", false, "size limits failed");
 
     // Move this check from ContextualCheckBlock to ConnectBlock as it depends on DGP values
@@ -2980,7 +2980,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     int64_t nSigOpsCost = 0;
     blockundo.vtxundo.reserve(block.vtx.size() - 1);
 
-    ///////////////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////////////// // kpg
 #ifdef ENABLE_BITCORE_RPC
     std::vector<std::pair<CAddressIndexKey, CAmount> > addressIndex;
     std::vector<std::pair<CAddressUnspentKey, CAddressUnspentValue> > addressUnspentIndex;
@@ -3029,7 +3029,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
             }
 
 #ifdef ENABLE_BITCORE_RPC
-            ////////////////////////////////////////////////////////////////// // qtum
+            ////////////////////////////////////////////////////////////////// // kpg
             if (fAddressIndex)
             {
                 for (size_t j = 0; j < tx.vin.size(); j++) {
@@ -3249,7 +3249,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 /////////////////////////////////////////////////////////////////////////////////////////
 
 #ifdef ENABLE_BITCORE_RPC
-        /////////////////////////////////////////////////////////////////////////////////// // qtum
+        /////////////////////////////////////////////////////////////////////////////////// // kpg
         if (fAddressIndex) {
 
             for (unsigned int k = 0; k < tx.vout.size(); k++) {
@@ -3293,7 +3293,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     int64_t nTime4 = GetTimeMicros(); nTimeVerify += nTime4 - nTime2;
     LogPrint(BCLog::BENCH, "    - Verify %u txins: %.2fms (%.3fms/txin) [%.2fs (%.2fms/blk)]\n", nInputs - 1, MILLI * (nTime4 - nTime2), nInputs <= 1 ? 0 : MILLI * (nTime4 - nTime2) / (nInputs-1), nTimeVerify * MICRO, nTimeVerify * MILLI / nBlocksTotal);
 
-////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////// // kpg
     checkBlock.hashMerkleRoot = BlockMerkleRoot(checkBlock);
     checkBlock.hashStateRoot = h256Touint(globalState->rootHash());
     checkBlock.hashUTXORoot = h256Touint(globalState->rootHashUTXO());
@@ -3371,7 +3371,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
     //only start checking this error after block 5000 and only on testnet and mainnet, not regtest
     if(pindex->nHeight > 5000 && !Params().MineBlocksOnDemand()) {
         //sanity check in case an exploit happens that allows new coins to be minted
-        if(pindex->nMoneySupply > (uint64_t)(100000000 + ((pindex->nHeight - 5000) * 4)) * COIN){
+        if(pindex->nMoneySupply > (uint64_t)(700000000 + ((pindex->nHeight - 5000) * 70)) * COIN){
             return state.DoS(100, error("ConnectBlock(): Unknown error caused actual money supply to exceed expected money supply"),
                              REJECT_INVALID, "incorrect-money-supply");
         }
@@ -3408,7 +3408,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
 
     assert(pindex->phashBlock);
 #ifdef ENABLE_BITCORE_RPC
-    ///////////////////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////////////////// // kpg
     if (fAddressIndex) {
         if (!pblocktree->WriteAddressIndex(addressIndex)) {
             return AbortNode(state, "Failed to write address index");
@@ -3805,8 +3805,8 @@ bool CChainState::ConnectTip(CValidationState& state, const CChainParams& chainp
     {
         CCoinsViewCache view(pcoinsTip.get());
 
-        dev::h256 oldHashStateRoot(globalState->rootHash()); // qtum
-        dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // qtum
+        dev::h256 oldHashStateRoot(globalState->rootHash()); // kpg
+        dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // kpg
 
         bool rv = ConnectBlock(blockConnecting, state, pindexNew, view, chainparams);
         GetMainSignals().BlockChecked(blockConnecting, state);
@@ -3814,8 +3814,8 @@ bool CChainState::ConnectTip(CValidationState& state, const CChainParams& chainp
             if (state.IsInvalid())
                 InvalidBlockFound(pindexNew, state);
 
-            globalState->setRoot(oldHashStateRoot); // qtum
-            globalState->setRootUTXO(oldHashUTXORoot); // qtum
+            globalState->setRoot(oldHashStateRoot); // kpg
+            globalState->setRootUTXO(oldHashUTXORoot); // kpg
             pstorageresult->clearCacheResult();
             return error("%s: ConnectBlock %s failed, %s", __func__, pindexNew->GetBlockHash().ToString(), FormatStateMessage(state));
         }
@@ -5387,13 +5387,13 @@ bool TestBlockValidity(CValidationState& state, const CChainParams& chainparams,
     if (!ContextualCheckBlock(block, state, chainparams.GetConsensus(), pindexPrev))
         return error("%s: Consensus::ContextualCheckBlock: %s", __func__, FormatStateMessage(state));
 
-    dev::h256 oldHashStateRoot(globalState->rootHash()); // qtum
-    dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // qtum
+    dev::h256 oldHashStateRoot(globalState->rootHash()); // kpg
+    dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // kpg
     
     if (!g_chainstate.ConnectBlock(block, state, &indexDummy, viewNew, chainparams, true)){
         
-        globalState->setRoot(oldHashStateRoot); // qtum
-        globalState->setRootUTXO(oldHashUTXORoot); // qtum
+        globalState->setRoot(oldHashStateRoot); // kpg
+        globalState->setRootUTXO(oldHashUTXORoot); // kpg
         pstorageresult->clearCacheResult();
         return false;
     }
@@ -5735,7 +5735,7 @@ bool static LoadBlockIndexDB(const CChainParams& chainparams) EXCLUSIVE_LOCKS_RE
     if(fReindexing) fReindex = true;
 
 #ifdef ENABLE_BITCORE_RPC
-    ///////////////////////////////////////////////////////////// // qtum
+    ///////////////////////////////////////////////////////////// // kpg
     pblocktree->ReadFlag("addrindex", fAddressIndex);
     LogPrintf("LoadBlockIndexDB(): address index %s\n", fAddressIndex ? "enabled" : "disabled");
     /////////////////////////////////////////////////////////////
@@ -5808,7 +5808,7 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
     CValidationState state;
     int reportDone = 0;
 
-////////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////////// // kpg
     dev::h256 oldHashStateRoot(globalState->rootHash());
     dev::h256 oldHashUTXORoot(globalState->rootHashUTXO());
     QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
@@ -5832,7 +5832,7 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
             break;
         }
 
-        ///////////////////////////////////////////////////////////////////// // qtum
+        ///////////////////////////////////////////////////////////////////// // kpg
         uint32_t sizeBlockDGP = qtumDGP.getBlockSize(pindex->nHeight);
         dgpMaxBlockSize = sizeBlockDGP ? sizeBlockDGP : dgpMaxBlockSize;
         updateBlockSizeParams(dgpMaxBlockSize);
@@ -5895,20 +5895,20 @@ bool CVerifyDB::VerifyDB(const CChainParams& chainparams, CCoinsView *coinsview,
             if (!ReadBlockFromDisk(block, pindex, chainparams.GetConsensus()))
                 return error("VerifyDB(): *** ReadBlockFromDisk failed at %d, hash=%s", pindex->nHeight, pindex->GetBlockHash().ToString());
 
-            dev::h256 oldHashStateRoot(globalState->rootHash()); // qtum
-            dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // qtum
+            dev::h256 oldHashStateRoot(globalState->rootHash()); // kpg
+            dev::h256 oldHashUTXORoot(globalState->rootHashUTXO()); // kpg
 
             if (!g_chainstate.ConnectBlock(block, state, pindex, coins, chainparams)){
 
-                globalState->setRoot(oldHashStateRoot); // qtum
-                globalState->setRootUTXO(oldHashUTXORoot); // qtum
+                globalState->setRoot(oldHashStateRoot); // kpg
+                globalState->setRootUTXO(oldHashUTXORoot); // kpg
                 pstorageresult->clearCacheResult();
                 return error("VerifyDB(): *** found unconnectable block at %d, hash=%s (%s)", pindex->nHeight, pindex->GetBlockHash().ToString(), FormatStateMessage(state));
             }
         }
     } else {
-        globalState->setRoot(oldHashStateRoot); // qtum
-        globalState->setRootUTXO(oldHashUTXORoot); // qtum
+        globalState->setRoot(oldHashStateRoot); // kpg
+        globalState->setRootUTXO(oldHashUTXORoot); // kpg
     }
     LogPrintf("[DONE].\n");
     LogPrintf("No coin database inconsistencies in last %i blocks (%i transactions)\n", block_count, nGoodTransactions);
@@ -6213,7 +6213,7 @@ bool LoadBlockIndex(const CChainParams& chainparams)
         fLogEvents = gArgs.GetBoolArg("-logevents", DEFAULT_LOGEVENTS);
         pblocktree->WriteFlag("logevents", fLogEvents);
 #ifdef ENABLE_BITCORE_RPC
-        /////////////////////////////////////////////////////////////// // qtum
+        /////////////////////////////////////////////////////////////// // kpg
         fAddressIndex = gArgs.GetBoolArg("-addrindex", DEFAULT_ADDRINDEX);
         pblocktree->WriteFlag("addrindex", fAddressIndex);
         ///////////////////////////////////////////////////////////////
@@ -6829,7 +6829,7 @@ public:
 } instance_of_cmaincleanup;
 
 #ifdef ENABLE_BITCORE_RPC
-////////////////////////////////////////////////////////////////////////////////// // qtum
+////////////////////////////////////////////////////////////////////////////////// // kpg
 bool GetAddressIndex(uint256 addressHash, int type, std::vector<std::pair<CAddressIndexKey, CAmount> > &addressIndex, int start, int end)
 {
     if (!fAddressIndex)

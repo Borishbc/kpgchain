@@ -1953,7 +1953,7 @@
     </message>
 </context>
 <context>
-    <name>bitcoin-core</name>
+    <name>kpg-core</name>
     <message>
         <source>Bitcoin Core</source>
         <translation>Bitcoin Core</translation>

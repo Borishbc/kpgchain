@@ -183,7 +183,7 @@ static UniValue gethexaddress(const JSONRPCRequest& request) {
 
     CTxDestination dest = DecodeDestination(request.params[0].get_str());
     if (!IsValidDestination(dest)) {
-        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid Qtum address");
+        throw JSONRPCError(RPC_INVALID_ADDRESS_OR_KEY, "Invalid KPG address");
     }
 
     const CKeyID *keyID = boost::get<CKeyID>(&dest);
@@ -278,7 +278,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
             "         \"reqSigs\" : n,            (numeric) The required sigs\n"
             "         \"type\" : \"pubkeyhash\",  (string) The type, eg 'pubkeyhash'\n"
             "         \"addresses\" : [           (json array of string)\n"
-            "           \"address\"        (string) qtum address\n"
+            "           \"address\"        (string) kpg address\n"
             "           ,...\n"
             "         ]\n"
             "       }\n"
@@ -360,7 +360,7 @@ static UniValue getrawtransaction(const JSONRPCRequest& request)
     }
 
 #ifdef ENABLE_BITCORE_RPC
-    //////////////////////////////////////////////////////// // qtum
+    //////////////////////////////////////////////////////// // kpg
     int nHeight = 0;
     int nConfirmations = 0;
     int nBlockTime = 0;

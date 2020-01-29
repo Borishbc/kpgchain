@@ -214,7 +214,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateNewBlock(const CScript& sc
 
     }
 
-    //////////////////////////////////////////////////////// qtum
+    //////////////////////////////////////////////////////// kpg
     QtumDGP qtumDGP(globalState.get(), fGettingValuesDGP);
     globalSealEngine->setQtumSchedule(qtumDGP.getGasSchedule(nHeight));
     uint32_t blockSizeDGP = qtumDGP.getBlockSize(nHeight);
@@ -356,7 +356,7 @@ std::unique_ptr<CBlockTemplate> BlockAssembler::CreateEmptyBlock(const CScript& 
         pblock->prevoutStake.n=0;
     }
 
-    //////////////////////////////////////////////////////// qtum
+    //////////////////////////////////////////////////////// kpg
     //state shouldn't change here for an empty block, but if it's not valid it'll fail in CheckBlock later
     pblock->hashStateRoot = uint256(h256Touint(dev::h256(globalState->rootHash())));
     pblock->hashUTXORoot = uint256(h256Touint(dev::h256(globalState->rootHashUTXO())));
@@ -877,7 +877,7 @@ void ThreadStakeMiner(CWallet *pwallet, CConnman* connman)
     SetThreadPriority(THREAD_PRIORITY_LOWEST);
 
     // Make this thread recognisable as the mining thread
-    std::string threadName = "qtumstake";
+    std::string threadName = "kpgstake";
     if(pwallet && pwallet->GetName() != "")
     {
         threadName = threadName + "-" + pwallet->GetName();

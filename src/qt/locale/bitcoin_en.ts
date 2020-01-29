@@ -85,12 +85,12 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -308,7 +308,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <location filename="../qtumgui.cpp" line="+318"/>
         <source>Sign &amp;message...</source>
@@ -436,8 +436,8 @@
     </message>
     <message>
         <location line="-1017"/>
-        <source>Send coins to a Qtum address</source>
-        <translation>Send coins to a Qtum address</translation>
+        <source>Send coins to a KPG address</source>
+        <translation>Send coins to a KPG address</translation>
     </message>
     <message>
         <location line="+67"/>
@@ -466,8 +466,8 @@
     </message>
     <message>
         <location line="+707"/>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <location line="-780"/>
@@ -496,13 +496,13 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Sign messages with your Qtum addresses to prove you own them</translation>
+        <source>Sign messages with your KPG addresses to prove you own them</source>
+        <translation>Sign messages with your KPG addresses to prove you own them</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verify messages to ensure they were signed with specified Qtum addresses</translation>
+        <source>Verify messages to ensure they were signed with specified KPG addresses</source>
+        <translation>Verify messages to ensure they were signed with specified KPG addresses</translation>
     </message>
     <message>
         <location line="+104"/>
@@ -551,10 +551,10 @@
     </message>
     <message numerus="yes">
         <location line="+524"/>
-        <source>%n active connection(s) to Qtum network</source>
+        <source>%n active connection(s) to KPG network</source>
         <translation>
-            <numerusform>%n active connection to Qtum network</numerusform>
-            <numerusform>%n active connections to Qtum network</numerusform>
+            <numerusform>%n active connection to KPG network</numerusform>
+            <numerusform>%n active connections to KPG network</numerusform>
         </translation>
     </message>
     <message>
@@ -642,7 +642,7 @@
     </message>
     <message>
         <location line="+4"/>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
+        <source>Show the %1 help message to get a list with possible KPG command-line options</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -773,7 +773,7 @@
     </message>
     <message>
         <location filename="../qtum.cpp" line="+392"/>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
+        <source>A fatal error occurred. KPG can no longer continue safely and will quit.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1011,7 +1011,7 @@
     </message>
     <message>
         <location line="+75"/>
-        <source>The entered address &quot;%1&quot; is not a valid Qtum address.</source>
+        <source>The entered address &quot;%1&quot; is not a valid KPG address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1131,8 +1131,8 @@
     </message>
     <message>
         <location filename="../intro.cpp" line="+22"/>
-        <source>Qtum</source>
-        <translation type="unfinished">Qtum</translation>
+        <source>KPG</source>
+        <translation type="unfinished">KPG</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -1146,7 +1146,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>%1 will download and store a copy of the Qtum block chain.</source>
+        <source>%1 will download and store a copy of the KPG block chain.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1428,8 +1428,8 @@
     </message>
     <message>
         <location line="+30"/>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
+        <source>Automatically open the KPG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Automatically open the KPG client port on the router. This only works when your router supports UPnP and it is enabled.</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -1448,7 +1448,7 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
+        <source>Connect to the KPG network through a SOCKS5 proxy.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1496,7 +1496,7 @@
     </message>
     <message>
         <location line="+25"/>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <source>Connect to the KPG network through a separate SOCKS5 proxy for Tor hidden services.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1636,8 +1636,8 @@
     <message>
         <location line="+62"/>
         <location line="+386"/>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KPG network after a connection is established, but this process has not completed yet.</source>
+        <translation>The displayed information may be out of date. Your wallet automatically synchronizes with the KPG network after a connection is established, but this process has not completed yet.</translation>
     </message>
     <message>
         <location line="-139"/>
@@ -1775,7 +1775,7 @@
     </message>
     <message>
         <location line="+8"/>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
+        <source>URI cannot be parsed! This can be caused by an invalid KPG address or malformed URI parameters.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1908,7 +1908,7 @@
     </message>
     <message>
         <location filename="../guiutil.cpp" line="+107"/>
-        <source>Enter a Qtum address (e.g. %1)</source>
+        <source>Enter a KPG address (e.g. %1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -2535,7 +2535,7 @@
     <message>
         <location line="-3"/>
         <location line="+46"/>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the KPG network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3075,7 +3075,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+101"/>
-        <source>Warning: Invalid Qtum address</source>
+        <source>Warning: Invalid KPG address</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3130,7 +3130,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+39"/>
-        <source>The Qtum address to send the payment to</source>
+        <source>The KPG address to send the payment to</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3192,7 +3192,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+54"/>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
+        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KPG network.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3254,7 +3254,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+18"/>
-        <source>The Qtum address to sign the message with</source>
+        <source>The KPG address to sign the message with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3296,8 +3296,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Sign the message to prove you own this Qtum address</translation>
+        <source>Sign the message to prove you own this KPG address</source>
+        <translation>Sign the message to prove you own this KPG address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3327,13 +3327,13 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="+21"/>
-        <source>The Qtum address the message was signed with</source>
+        <source>The KPG address the message was signed with</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location line="+37"/>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verify the message to ensure it was signed with the specified Qtum address</translation>
+        <source>Verify the message to ensure it was signed with the specified KPG address</source>
+        <translation>Verify the message to ensure it was signed with the specified KPG address</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4152,7 +4152,7 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
 </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
         <location filename="../qtumstrings.cpp" line="+29"/>
         <source>Distributed under the MIT software license, see the accompanying file %s or %s</source>
@@ -4190,8 +4190,8 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of &quot;100 satos
     </message>
     <message>
         <location line="-170"/>
-        <source>Qtum Core</source>
-        <translation type="unfinished">Qtum Core</translation>
+        <source>KPG Core</source>
+        <translation type="unfinished">KPG Core</translation>
     </message>
     <message>
         <location line="+1"/>

@@ -117,7 +117,7 @@ class QtumDGPActivation(BitcoinTestFramework):
         # Now we should only allow new 1MB blocks,
         # however the old 8MB block not cause any errors when restarting since it was accepted at a time when 8MB was the block size limit
 
-        # Restart the qtumd to verify that no crashes occurs on startup
+        # Restart the kpgd to verify that no crashes occurs on startup
         self.stop_nodes()
         self.start_nodes()
 

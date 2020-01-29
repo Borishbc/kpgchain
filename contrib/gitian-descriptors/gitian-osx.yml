@@ -28,7 +28,7 @@ packages:
 - "python-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/qtumproject/qtum.git"
+- "url": "https://github.com/kunpengproject/kpgchain.git"
   "dir": "qtum"
 - "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
   "dir": "cpp-eth-qtum"

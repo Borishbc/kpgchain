@@ -66,12 +66,12 @@
         <translation>Recibiendo direcciones</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Estas son sus direcciones Qtum para enviar pagos. Verifique siempre la cantidad y la dirección de recibimiento antes de enviar monedas.</translation>
+        <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
+        <translation>Estas son sus direcciones KPG para enviar pagos. Verifique siempre la cantidad y la dirección de recibimiento antes de enviar monedas.</translation>
     </message>
     <message>
-        <source>These are your Qtum addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
-        <translation>Estas son sus direcciones Qtum para recibir pagos. Se recomienda utilizar una nueva dirección de recibimiento para cada transacción</translation>
+        <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
+        <translation>Estas son sus direcciones KPG para recibir pagos. Se recomienda utilizar una nueva dirección de recibimiento para cada transacción</translation>
     </message>
     <message>
         <source>&amp;Copy Address</source>
@@ -236,7 +236,7 @@
     </message>
 </context>
 <context>
-    <name>QtumGUI</name>
+    <name>KPGGUI</name>
     <message>
         <source>Sign &amp;message...</source>
         <translation>Firmar &amp;mensaje...</translation>
@@ -334,8 +334,8 @@
         <translation>Reindexando bloques en disco...</translation>
     </message>
     <message>
-        <source>Send coins to a Qtum address</source>
-        <translation>Enviar qtums a una dirección Qtum</translation>
+        <source>Send coins to a KPG address</source>
+        <translation>Enviar qtums a una dirección KPG</translation>
     </message>
     <message>
         <source>Backup wallet to another location</source>
@@ -358,8 +358,8 @@
         <translation>&amp;Verificar mensaje...</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>&amp;Send</source>
@@ -382,12 +382,12 @@
         <translation>Cifrar las claves privadas de su monedero</translation>
     </message>
     <message>
-        <source>Sign messages with your Qtum addresses to prove you own them</source>
-        <translation>Firmar mensajes con sus direcciones Qtum para demostrar la propiedad</translation>
+        <source>Sign messages with your KPG addresses to prove you own them</source>
+        <translation>Firmar mensajes con sus direcciones KPG para demostrar la propiedad</translation>
     </message>
     <message>
-        <source>Verify messages to ensure they were signed with specified Qtum addresses</source>
-        <translation>Verificar mensajes comprobando que están firmados con direcciones Qtum concretas</translation>
+        <source>Verify messages to ensure they were signed with specified KPG addresses</source>
+        <translation>Verificar mensajes comprobando que están firmados con direcciones KPG concretas</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -426,8 +426,8 @@
         <translation>&amp;Opciones de consola de comandos</translation>
     </message>
     <message numerus="yes">
-        <source>%n active connection(s) to Qtum network</source>
-        <translation><numerusform>%n conexión activa hacia la red Qtum</numerusform><numerusform>%n conexiones activas hacia la red Qtum</numerusform></translation>
+        <source>%n active connection(s) to KPG network</source>
+        <translation><numerusform>%n conexión activa hacia la red KPG</numerusform><numerusform>%n conexiones activas hacia la red KPG</numerusform></translation>
     </message>
     <message>
         <source>Indexing blocks on disk...</source>
@@ -470,8 +470,8 @@
         <translation>Actualizado</translation>
     </message>
     <message>
-        <source>Show the %1 help message to get a list with possible Qtum command-line options</source>
-        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de linea de comandos de Qtum</translation>
+        <source>Show the %1 help message to get a list with possible KPG command-line options</source>
+        <translation>Mostrar el mensaje de ayuda %1 para obtener una lista de los posibles comandos de linea de comandos de KPG</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -570,8 +570,8 @@
         <translation>El monedero está &lt;b&gt;cifrado&lt;/b&gt; y actualmente &lt;b&gt;bloqueado&lt;/b&gt;</translation>
     </message>
     <message>
-        <source>A fatal error occurred. Qtum can no longer continue safely and will quit.</source>
-        <translation>Ha ocurrido un error fatal. Qtum no puede continuar de manera segura y se cerrará.</translation>
+        <source>A fatal error occurred. KPG can no longer continue safely and will quit.</source>
+        <translation>Ha ocurrido un error fatal. KPG no puede continuar de manera segura y se cerrará.</translation>
     </message>
 </context>
 <context>
@@ -760,8 +760,8 @@
         <translation>Editar dirección de envío</translation>
     </message>
     <message>
-        <source>The entered address "%1" is not a valid Qtum address.</source>
-        <translation>La dirección introducida "%1" no es una dirección Qtum válida.</translation>
+        <source>The entered address "%1" is not a valid KPG address.</source>
+        <translation>La dirección introducida "%1" no es una dirección KPG válida.</translation>
     </message>
     <message>
         <source>Address "%1" already exists as a receiving address with label "%2" and so cannot be added as a sending address.</source>
@@ -845,8 +845,8 @@
         <translation>Utilizar un directorio de datos personalizado:</translation>
     </message>
     <message>
-        <source>Qtum</source>
-        <translation>Qtum</translation>
+        <source>KPG</source>
+        <translation>KPG</translation>
     </message>
     <message>
         <source>Error: Specified data directory "%1" cannot be created.</source>
@@ -1006,16 +1006,16 @@
         <translation>&amp;Gastar cambio no confirmado</translation>
     </message>
     <message>
-        <source>Automatically open the Qtum client port on the router. This only works when your router supports UPnP and it is enabled.</source>
-        <translation>Abrir automáticamente el puerto del cliente Qtum en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
+        <source>Automatically open the KPG client port on the router. This only works when your router supports UPnP and it is enabled.</source>
+        <translation>Abrir automáticamente el puerto del cliente KPG en el router. Esta opción solo funciona si el router admite UPnP y está activado.</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
         <translation>Mapear el puerto mediante &amp;UPnP</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a SOCKS5 proxy.</source>
-        <translation>Conectarse a la red Qtum a través de un proxy SOCKS5.</translation>
+        <source>Connect to the KPG network through a SOCKS5 proxy.</source>
+        <translation>Conectarse a la red KPG a través de un proxy SOCKS5.</translation>
     </message>
     <message>
         <source>&amp;Connect through SOCKS5 proxy (default proxy):</source>
@@ -1050,8 +1050,8 @@
         <translation>Tor</translation>
     </message>
     <message>
-        <source>Connect to the Qtum network through a separate SOCKS5 proxy for Tor hidden services.</source>
-        <translation>Conectar a la red Qtum mediante un proxy SOCKS5 por separado para los servicios ocultos de Tor.</translation>
+        <source>Connect to the KPG network through a separate SOCKS5 proxy for Tor hidden services.</source>
+        <translation>Conectar a la red KPG mediante un proxy SOCKS5 por separado para los servicios ocultos de Tor.</translation>
     </message>
     <message>
         <source>&amp;Window</source>
@@ -1145,8 +1145,8 @@
         <translation>Formulario</translation>
     </message>
     <message>
-        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the Qtum network after a connection is established, but this process has not completed yet.</source>
-        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red Qtum después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
+        <source>The displayed information may be out of date. Your wallet automatically synchronizes with the KPG network after a connection is established, but this process has not completed yet.</source>
+        <translation>La información mostrada puede estar desactualizada. Su monedero se sincroniza automáticamente con la red KPG después de que se haya establecido una conexión, pero este proceso aún no se ha completado.</translation>
     </message>
     <message>
         <source>Watch-only:</source>
@@ -1236,8 +1236,8 @@
         <translation>Dirección de pago inválida %1</translation>
     </message>
     <message>
-        <source>URI cannot be parsed! This can be caused by an invalid Qtum address or malformed URI parameters.</source>
-        <translation>URI no puede ser analizado! Esto puede ser causado por una dirección Qtum inválida o parametros URI mal formados.</translation>
+        <source>URI cannot be parsed! This can be caused by an invalid KPG address or malformed URI parameters.</source>
+        <translation>URI no puede ser analizado! Esto puede ser causado por una dirección KPG inválida o parametros URI mal formados.</translation>
     </message>
     <message>
         <source>Payment request file handling</source>
@@ -1338,8 +1338,8 @@
         <translation>Cantidad</translation>
     </message>
     <message>
-        <source>Enter a Qtum address (e.g. %1)</source>
-        <translation>Introducir una dirección Qtum (p. ej. %1)</translation>
+        <source>Enter a KPG address (e.g. %1)</source>
+        <translation>Introducir una dirección KPG (p. ej. %1)</translation>
     </message>
     <message>
         <source>%1 d</source>
@@ -1714,8 +1714,8 @@
         <translation>Mensaje:</translation>
     </message>
     <message>
-        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the Qtum network.</source>
-        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, que se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red Qtum.</translation>
+        <source>An optional message to attach to the payment request, which will be displayed when the request is opened. Note: The message will not be sent with the payment over the KPG network.</source>
+        <translation>Un mensaje opcional para adjuntar a la solicitud de pago, que se muestra cuando se abre la solicitud. Nota: El mensaje no se enviará con el pago por la red KPG.</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2075,8 +2075,8 @@
         <translation>Solicitud de pago caducada.</translation>
     </message>
     <message>
-        <source>Warning: Invalid Qtum address</source>
-        <translation>Alerta: dirección Qtum inválida</translation>
+        <source>Warning: Invalid KPG address</source>
+        <translation>Alerta: dirección KPG inválida</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2118,8 +2118,8 @@
         <translation>Esto es un pago ordinario.</translation>
     </message>
     <message>
-        <source>The Qtum address to send the payment to</source>
-        <translation>Dirección Qtum a la que enviar el pago</translation>
+        <source>The KPG address to send the payment to</source>
+        <translation>Dirección KPG a la que enviar el pago</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2162,8 +2162,8 @@
         <translation>Introduce una etiqueta para esta dirección para añadirla a la lista de direcciones utilizadas</translation>
     </message>
     <message>
-        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the Qtum network.</source>
-        <translation>Un mensaje que se adjuntó a la qtum: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red Qtum.</translation>
+        <source>A message that was attached to the qtum: URI which will be stored with the transaction for your reference. Note: This message will not be sent over the KPG network.</source>
+        <translation>Un mensaje que se adjuntó a la qtum: URL que será almacenada con la transacción para su referencia. Nota: Este mensaje no se envía a través de la red KPG.</translation>
     </message>
     <message>
         <source>Pay To:</source>
@@ -2211,8 +2211,8 @@
         <translation>Puede firmar los mensajes con sus direcciones para demostrar que las posee. Tenga cuidado de no firmar cualquier cosa de manera vaga o aleatoria, pues los ataques de phishing pueden tratar de engañarle firmando su identidad a través de ellos. Sólo firme declaraciones totalmente detalladas con las que usted esté de acuerdo.</translation>
     </message>
     <message>
-        <source>The Qtum address to sign the message with</source>
-        <translation>Dirección Qtum con la que firmar el mensaje</translation>
+        <source>The KPG address to sign the message with</source>
+        <translation>Dirección KPG con la que firmar el mensaje</translation>
     </message>
     <message>
         <source>Choose previously used address</source>
@@ -2243,8 +2243,8 @@
         <translation>Copiar la firma actual al portapapeles del sistema</translation>
     </message>
     <message>
-        <source>Sign the message to prove you own this Qtum address</source>
-        <translation>Firmar el mensaje para demostrar que se posee esta dirección Qtum</translation>
+        <source>Sign the message to prove you own this KPG address</source>
+        <translation>Firmar el mensaje para demostrar que se posee esta dirección KPG</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
@@ -2267,12 +2267,12 @@
         <translation>Introduzca la dirección para la firma, el mensaje (asegurándose de copiar tal cual los saltos de línea, espacios, tabulaciones, etc.) y la firma a continuación para verificar el mensaje. Tenga cuidado de no asumir más información de lo que dice el propio mensaje firmado para evitar fraudes basados en ataques de tipo man-in-the-middle. </translation>
     </message>
     <message>
-        <source>The Qtum address the message was signed with</source>
-        <translation>La dirección Qtum con la que se firmó el mensaje</translation>
+        <source>The KPG address the message was signed with</source>
+        <translation>La dirección KPG con la que se firmó el mensaje</translation>
     </message>
     <message>
-        <source>Verify the message to ensure it was signed with the specified Qtum address</source>
-        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección Qtum indicada</translation>
+        <source>Verify the message to ensure it was signed with the specified KPG address</source>
+        <translation>Verificar el mensaje para comprobar que fue firmado con la dirección KPG indicada</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
@@ -2829,7 +2829,7 @@
     </message>
     </context>
 <context>
-    <name>qtum-core</name>
+    <name>kpg-core</name>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
         <translation>La Poda se ha configurado por debajo del minimo de %d MiB. Por favor utiliza un valor mas alto.</translation>
@@ -2855,8 +2855,8 @@
         <translation>No se ha podido comenzar el servidor HTTP. Ver debug log para detalles.</translation>
     </message>
     <message>
-        <source>Qtum Core</source>
-        <translation>Qtum Core</translation>
+        <source>KPG Core</source>
+        <translation>KPG Core</translation>
     </message>
     <message>
         <source>The %s developers</source>

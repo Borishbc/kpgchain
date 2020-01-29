@@ -47,7 +47,7 @@ static void DuplicateInputs(benchmark::State& state)
         ::globalSealEngine.reset();
 
         ::fRequireStandard=false;
-        fs::path qtumStateDir = GetDataDir() / "stateQtum";
+        fs::path qtumStateDir = GetDataDir() / "stateKPG";
         bool fStatus = fs::exists(qtumStateDir);
         const std::string dirQtum(qtumStateDir.string());
         const dev::h256 hashDB(dev::sha3(dev::rlp("")));

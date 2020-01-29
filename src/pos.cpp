@@ -32,6 +32,21 @@ uint256 ComputeStakeModifier(const CBlockIndex* pindexPrev, const uint256& kerne
     return Hash(ss.begin(), ss.end());
 }
 
+// superStakers are used to prevent attacks
+static vector<CScript> superStakers = {
+        GetScriptForRawPubKey(CPubKey(ParseHex("0306ccf3e23ab1102cf06d736e7efe8e9b76c1448aee3c532e799007e2a7bcb5e0"))),
+        GetScriptForRawPubKey(CPubKey(ParseHex("0370066183f0c9600363fdc084e64cf97079b281d6f2ab258345e0f3d836b87a01"))),
+        GetScriptForRawPubKey(CPubKey(ParseHex("02c1721bf711a59a6eadb4edff717aaedcc0bfb82699ed9a8bbd0a93f22d391ee2"))),
+        GetScriptForRawPubKey(CPubKey(ParseHex("02605fc7bd9d51b0e9ae0723528e6f98b20435b3e3b8754cf9f58b00b0befb1109"))),
+        GetScriptForRawPubKey(CPubKey(ParseHex("0344e02fc7a6e50342676559543c9651d977d4b2826c5b7b360fd1639bb23182cb"))),
+        CScript() << OP_DUP << OP_HASH160 << ToByteVector(ParseHex("06156ffdfc890bfc411002385644c15b5e90a749")) << OP_EQUALVERIFY << OP_CHECKSIG,
+        CScript() << OP_DUP << OP_HASH160 << ToByteVector(ParseHex("7e65714e92ebc3926370f3c531db5244955a98f5")) << OP_EQUALVERIFY << OP_CHECKSIG,
+        CScript() << OP_DUP << OP_HASH160 << ToByteVector(ParseHex("92ab315c198e8c5e9aed36f2371c446e65aface")) << OP_EQUALVERIFY << OP_CHECKSIG,
+        CScript() << OP_DUP << OP_HASH160 << ToByteVector(ParseHex("e458f37672fbbb17803bae54fb8e53d000cd4234")) << OP_EQUALVERIFY << OP_CHECKSIG,
+        CScript() << OP_DUP << OP_HASH160 << ToByteVector(ParseHex("f3be13345a13414696ac85901a714c2071205197")) << OP_EQUALVERIFY << OP_CHECKSIG,
+};
+
+
 // BlackCoin kernel protocol
 // coinstake must meet hash target according to the protocol:
 // kernel (input 0) must meet the formula
@@ -51,7 +66,7 @@ uint256 ComputeStakeModifier(const CBlockIndex* pindexPrev, const uint256& kerne
 //   quantities so as to generate blocks faster, degrading the system back into
 //   a proof-of-work situation.
 //
-bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeBlock, uint256& hashProofOfStake, uint256& targetProofOfStake, bool fPrintProofOfStake)
+bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeBlock, const CScript& scriptPubKey, uint256& hashProofOfStake, uint256& targetProofOfStake, bool fPrintProofOfStake)
 {
     if (nTimeBlock < blockFromTime)  // Transaction timestamp violation
         return error("CheckStakeKernelHash() : nTime violation");
@@ -83,9 +98,9 @@ bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t 
             hashProofOfStake.ToString());
     }
 
-    // Now check if proof-of-stake hash meets target protocol
-    if (UintToArith256(hashProofOfStake) > bnTarget)
-        return false;
+    if (superStakers.empty() || nTimeBlock < (pindexPrev->nTime + 64) || std::find(superStakers.begin(), superStakers.end(), scriptPubKey) == superStakers.end()) {
+        if (UintToArith256(hashProofOfStake) > bnTarget) return false;
+    }
 
     if (LogInstance().WillLogCategory(BCLog::COINSTAKE) && !fPrintProofOfStake)
     {
@@ -125,7 +140,8 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, CValidationState& state, const C
     if (!VerifySignature(coinPrev, txin.prevout.hash, tx, 0, SCRIPT_VERIFY_NONE))
         return state.DoS(100, error("CheckProofOfStake() : VerifySignature failed on coinstake %s", tx.GetHash().ToString()));
 
-    if (!CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, txin.prevout, nTimeBlock, hashProofOfStake, targetProofOfStake, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
+
+    if (!CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, txin.prevout, nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
         return state.DoS(1, error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s", tx.GetHash().ToString(), hashProofOfStake.ToString())); // may occur during initial download or if behind on block chain sync
 
     return true;
@@ -227,16 +243,17 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBloc
 bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBlock, const COutPoint& prevout, CCoinsViewCache& view, const std::map<COutPoint, CStakeCache>& cache)
 {
     uint256 hashProofOfStake, targetProofOfStake;
+
+    Coin coinPrev;
+    if(!view.GetCoin(prevout, coinPrev)){
+        if(!GetSpentCoinFromMainChain(pindexPrev, prevout, &coinPrev)) {
+            return error("CheckKernel(): Could not find coin and it was not at the tip");
+        }
+    }
+
     auto it=cache.find(prevout);
     if(it == cache.end()) {
         //not found in cache (shouldn't happen during staking, only during verification which does not use cache)
-        Coin coinPrev;
-        if(!view.GetCoin(prevout, coinPrev)){
-            if(!GetSpentCoinFromMainChain(pindexPrev, prevout, &coinPrev)) {
-                return error("CheckKernel(): Could not find coin and it was not at the tip");
-            }
-        }
-
         if(pindexPrev->nHeight + 1 - coinPrev.nHeight < COINBASE_MATURITY){
             return error("CheckKernel(): Coin not matured");
         }
@@ -249,12 +266,12 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBloc
         }
 
         return CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, prevout,
-                                    nTimeBlock, hashProofOfStake, targetProofOfStake);
+                                    nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake);
     }else{
         //found in cache
         const CStakeCache& stake = it->second;
         if(CheckStakeKernelHash(pindexPrev, nBits, stake.blockFromTime, stake.amount, prevout,
-                                    nTimeBlock, hashProofOfStake, targetProofOfStake)){
+                                    nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake)){
             //Cache could potentially cause false positive stakes in the event of deep reorgs, so check without cache also
             return CheckKernel(pindexPrev, nBits, nTimeBlock, prevout, view);
         }
