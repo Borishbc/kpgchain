@@ -283,14 +283,14 @@ void BitcoinGUI::createActions()
 {
     QActionGroup *tabGroup = new QActionGroup(this);
 
-    overviewAction = new QAction(platformStyle->MultiStatesIcon(":/icons/overview"), tr("My &wallet"), this);
+    overviewAction = new QAction(platformStyle->MultiStatesIcon(":/icons/overview"), "钱包", this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
     overviewAction->setCheckable(true);
     overviewAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_1));
     tabGroup->addAction(overviewAction);
 
-    sendCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/send_to"), tr("&Send"), this);
+    sendCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/send_to"), "发送", this);
     sendCoinsAction->setStatusTip(tr("Send coins to a KPG address"));
     sendCoinsAction->setToolTip(sendCoinsAction->statusTip());
     sendCoinsAction->setCheckable(true);
@@ -299,7 +299,7 @@ void BitcoinGUI::createActions()
     sendCoinsMenuAction = new QAction(platformStyle->MenuColorIcon(":/icons/send"), sendCoinsAction->text(), this);
     sendCoinsMenuAction->setStatusTip(sendCoinsAction->statusTip());
     sendCoinsMenuAction->setToolTip(sendCoinsMenuAction->statusTip());
-    receiveCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/receive_from"), tr("&Receive"), this);
+    receiveCoinsAction = new QAction(platformStyle->MultiStatesIcon(":/icons/receive_from"), "接收", this);
     receiveCoinsAction->setStatusTip(tr("Request payments (generates QR codes and kpg: URIs)"));
     receiveCoinsAction->setToolTip(receiveCoinsAction->statusTip());
     receiveCoinsAction->setCheckable(true);
@@ -309,7 +309,7 @@ void BitcoinGUI::createActions()
     receiveCoinsMenuAction->setStatusTip(receiveCoinsAction->statusTip());
     receiveCoinsMenuAction->setToolTip(receiveCoinsMenuAction->statusTip());
 
-    smartContractAction = new QAction(platformStyle->MultiStatesIcon(":/icons/smart_contract"), tr("Smart &Contracts"), this);
+    smartContractAction = new QAction(platformStyle->MultiStatesIcon(":/icons/smart_contract"), "智能合约", this);
     smartContractAction->setStatusTip(tr("Smart contracts"));
     smartContractAction->setToolTip(smartContractAction->statusTip());
     smartContractAction->setCheckable(true);
@@ -320,21 +320,21 @@ void BitcoinGUI::createActions()
     sendToContractAction = new QAction(tr("Send To"), this);
     callContractAction = new QAction(tr("Call"), this);
 
-    stakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), tr("&Stake"), this);
+    stakeAction = new QAction(platformStyle->MultiStatesIcon(":/icons/tx_mined"), "挖矿", this);
     stakeAction->setStatusTip(tr("Show stake of wallet"));
     stakeAction->setToolTip(stakeAction->statusTip());
     stakeAction->setCheckable(true);
     stakeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_3));
     tabGroup->addAction(stakeAction);
 
-    historyAction = new QAction(platformStyle->MultiStatesIcon(":/icons/history"), tr("&Transactions"), this);//KPG_LINE
+    historyAction = new QAction(platformStyle->MultiStatesIcon(":/icons/history"), "交易", this);//KPG_LINE
     historyAction->setStatusTip(tr("Browse transaction history"));
     historyAction->setToolTip(historyAction->statusTip());
     historyAction->setCheckable(true);
     historyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
     tabGroup->addAction(historyAction);
 
-    QRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/qrctoken"), tr("&Tokens"), this);
+    QRCTokenAction = new QAction(platformStyle->MultiStatesIcon(":/icons/qrctoken"), "代币", this);
     QRCTokenAction->setStatusTip(tr("Tokens (send, receive or add Tokens in list)"));
     QRCTokenAction->setToolTip(QRCTokenAction->statusTip());
     QRCTokenAction->setCheckable(true);
@@ -386,19 +386,19 @@ void BitcoinGUI::createActions()
     toggleHideAction = new QAction(platformStyle->MenuColorIcon(":/icons/about"), tr("&Show / Hide"), this);
     toggleHideAction->setStatusTip(tr("Show or hide the main Window"));
 
-    encryptWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/encrypt"), tr("&Encrypt Wallet..."), this);
+    encryptWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/encrypt"), "加密钱包", this);
     encryptWalletAction->setStatusTip(tr("Encrypt the private keys that belong to your wallet"));
     encryptWalletAction->setCheckable(true);
-    backupWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/backup_wallet"), tr("&Backup Wallet..."), this);
+    backupWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/backup_wallet"), "备份钱包", this);
     backupWalletAction->setStatusTip(tr("Backup wallet to another location"));
-    restoreWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/restore"), tr("&Restore Wallet..."), this);
+    restoreWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/restore"), "导入钱包", this);
     restoreWalletAction->setStatusTip(tr("Restore wallet from another location"));
-    changePassphraseAction = new QAction(platformStyle->MenuColorIcon(":/icons/key"), tr("&Change Passphrase..."), this);
+    changePassphraseAction = new QAction(platformStyle->MenuColorIcon(":/icons/key"), "修改密码", this);
     changePassphraseAction->setStatusTip(tr("Change the passphrase used for wallet encryption"));
-    unlockWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/lock_open"), tr("&Unlock Wallet..."), this);
+    unlockWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/lock_open"), "解锁钱包", this);
     unlockWalletAction->setToolTip(tr("Unlock wallet"));
     unlockWalletAction->setObjectName("unlockWalletAction");
-    lockWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/lock_closed"), tr("&Lock Wallet"), this);
+    lockWalletAction = new QAction(platformStyle->MenuColorIcon(":/icons/lock_closed"), "锁定钱包", this);
     lockWalletAction->setToolTip(tr("Lock wallet"));
     signMessageAction = new QAction(platformStyle->MenuColorIcon(":/icons/edit"), tr("Sign &message..."), this);
     signMessageAction->setStatusTip(tr("Sign messages with your KPG addresses to prove you own them"));

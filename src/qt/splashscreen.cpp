@@ -105,7 +105,7 @@ SplashScreen::SplashScreen(interfaces::Node& node, Qt::WindowFlags f, const Netw
 
     QRect welcomeRect(0, splashSize.height() - statusHeight - welcomeTextHeight - 40, splashSize.width() -20, welcomeTextHeight);
     pixPaint.setFont(QFont(font, 10 * fontFactor, QFont::Bold));
-    pixPaint.drawText(welcomeRect, Qt::AlignRight | Qt::AlignTop, "KPG-Qt Wallet");
+    pixPaint.drawText(welcomeRect, Qt::AlignRight | Qt::AlignTop, "鲲鹏公有链钱包");
 
     // draw copyright stuff
     QFont statusFont = QApplication::font();

@@ -239,7 +239,7 @@
             <item>
              <widget class="QLabel" name="labelAddress">
               <property name="text">
-               <string>Address</string>
+               <string>地址</string>
               </property>
               <property name="textInteractionFlags">
                <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
@@ -294,7 +294,7 @@
         <item>
          <widget class="QPushButton" name="btnRefreshAddress">
           <property name="text">
-           <string>Address Re&amp;fresh</string>
+           <string>刷新地址</string>
           </property>
          </widget>
         </item>

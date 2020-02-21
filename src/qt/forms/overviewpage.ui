@@ -875,14 +875,14 @@
          <item>
           <widget class="QtumPushButton" name="buttonSend">
            <property name="text">
-            <string>Send</string>
+            <string>发送</string>
            </property>
           </widget>
          </item>
          <item>
           <widget class="QtumPushButton" name="buttonReceive">
            <property name="text">
-            <string>Receive</string>
+            <string>接收</string>
            </property>
           </widget>
          </item>
