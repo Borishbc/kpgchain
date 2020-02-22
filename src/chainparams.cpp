@@ -165,11 +165,11 @@ public:
         };
 
         chainTxData = ChainTxData{
-            // Data as of block 5c0215809068d3e8520997febc84ca578b4ddf3f8917a86b6c7f5e1deecb5c32 (height 499049)
-            0, // * UNIX timestamp of last known number of transactions
-            0, // * total number of transactions between genesis and that timestamp
+            // Data as of block 55c7f22eb3a03c7e4922509fac05c2dc317fb37794d9c3165aee81c2db7b557f (height 6719)
+            1582378336, // * UNIX timestamp of last known number of transactions
+            8817, // * total number of transactions between genesis and that timestamp
             //   (the tx=... number in the SetBestChain debug.log lines)
-            0 // * estimated number of transactions per second after that timestamp
+            0.08527949228953427 // * estimated number of transactions per second after that timestamp
         };
 
         /* disable fallback fee on mainnet */
