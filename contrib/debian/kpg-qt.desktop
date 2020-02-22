@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=0.17.6
+Version=0.0.1
 Name=KPG Core
 Comment=Connect to the KPG P2P Network
 Exec=kpg-qt %u
