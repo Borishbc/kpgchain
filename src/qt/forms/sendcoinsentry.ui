@@ -134,7 +134,7 @@
       <item>
        <widget class="QValidatedLineEdit" name="payTo">
         <property name="toolTip">
-         <string>The Qtum address to send the payment to</string>
+         <string>The KPG address to send the payment to</string>
         </property>
        </widget>
       </item>

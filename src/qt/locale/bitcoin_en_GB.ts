@@ -924,7 +924,7 @@
         <translation>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronising with the KPG network, as detailed below.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend KPGs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Attempting to spend KPGs that are affected by not-yet-displayed transactions will not be accepted by the network.</translation>
     </message>
     <message>

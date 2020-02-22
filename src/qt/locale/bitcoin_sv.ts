@@ -949,7 +949,7 @@ Var vänlig och försök igen.</translation>
         <translation>Nyligen gjorda transaktioner visas inte korrekt och därför kan din plånboks saldo visas felaktigt. Denna information kommer att visas korrekt så snart din plånbok har synkroniserat klart med KPG-nätverket enligt detaljer nedan.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend KPGs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Att försöka spendera qtum som påverkas av transaktioner som ännu inte visas kommer inte accepteras av nätverket. </translation>
     </message>
     <message>

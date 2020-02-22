@@ -1081,7 +1081,7 @@ static bool AcceptToMemoryPoolWorker(const CChainParams& chainparams, CTxMemPool
         // Remove conflicting transactions from the mempool
         for (CTxMemPool::txiter it : allConflicting)
         {
-            LogPrint(BCLog::MEMPOOL, "replacing tx %s with %s for %s QTUM additional fees, %d delta bytes\n",
+            LogPrint(BCLog::MEMPOOL, "replacing tx %s with %s for %s KPG additional fees, %d delta bytes\n",
                     it->GetTx().GetHash().ToString(),
                     hash.ToString(),
                     FormatMoney(nModifiedFees - nConflictingFees),
@@ -3102,7 +3102,7 @@ bool CChainState::ConnectBlock(const CBlock& block, CValidationState& state, CBl
             nValueOut += nTxValueOut;
         }
 
-///////////////////////////////////////////////////////////////////////////////////////// qtum
+///////////////////////////////////////////////////////////////////////////////////////// KPG
         if(!CheckOpSender(tx, chainparams, pindex->nHeight)){
             return state.DoS(100, false, REJECT_INVALID, "bad-txns-invalid-sender");
         }

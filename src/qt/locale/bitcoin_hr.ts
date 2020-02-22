@@ -887,7 +887,7 @@
         <translation>Nedavne transakcije možda još nisu vidljive pa vam stanje novčanika može biti netočno. Ove informacije bit će točne nakon što vaš novčanik dovrši sinkronizaciju s KPGovom mrežom, kako je opisano dolje.</translation>
     </message>
     <message>
-        <source>Attempting to spend qtums that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
+        <source>Attempting to spend KPGs that are affected by not-yet-displayed transactions will not be accepted by the network.</source>
         <translation>Mreža neće prihvatiti pokušaje trošenja qtuma koji su utjecani sa strane transakcija koje još nisu vidljive.</translation>
     </message>
     <message>

@@ -1319,10 +1319,10 @@ public:
     /* Remove token entry from the wallet */
     bool RemoveTokenEntry(const uint256& tokenHash, bool fFlushOnClose=true);
 
-    /* Start staking qtums */
+    /* Start staking KPGs */
     void StartStake(CConnman* connman = CWallet::defaultConnman);
 
-    /* Stop staking qtums */
+    /* Stop staking KPGs */
     void StopStake();
 
     /* Clean token transaction entries in the wallet */
