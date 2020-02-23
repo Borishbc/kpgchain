@@ -141,7 +141,8 @@ void StakePage::updateNetworkWeight()
 
 void StakePage::updateAnnualROI()
 {
-    ui->labelROI->setText(QString::number(m_expectedAnnualROI, 'f', 2) + "%");
+    ui->labelROI->setText(QString::number(5, 'f', 2) + "%");
+    //ui->labelROI->setText(QString::number(m_expectedAnnualROI, 'f', 2) + "%");
 }
 
 void StakePage::updateEncryptionStatus()
