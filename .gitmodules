@@ -1,4 +1,4 @@
 [submodule "src/cpp-ethereum"]
 	path = src/cpp-ethereum
-	url = https://github.com/qtumproject/cpp-eth-qtum.git
-	branch = develop
+	url = https://github.com/kunpengproject/cpp-ethereum.git
+	branch = eb159b57ee8b1c0cb59fee8091553c751b5bad82

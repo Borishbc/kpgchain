@@ -30,15 +30,15 @@ packages:
 remotes:
 - "url": "https://github.com/kunpengproject/kpgchain.git"
   "dir": "kpgchain"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
-  "dir": "cpp-eth-qtum"
+- "url": "https://github.com/kunpengproject/cpp-ethereum.git"
+  "dir": "cpp-ethereum"
 files:
 - "MacOSX10.11.sdk.tar.gz"
 script: |
   set -e -o pipefail
 
   #this is a hack since gitian has no natural support for submodules
-  cp -r cpp-eth-qtum/* kpgchain/src/cpp-ethereum
+  cp -r cpp-ethereum/* kpgchain/src/cpp-ethereum
   #make sure this file exists... 
   cat kpgchain/src/cpp-ethereum/utils/libscrypt/b64.c
 

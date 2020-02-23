@@ -39,15 +39,15 @@ packages:
 remotes:
 - "url": "https://github.com/kunpengproject/kpgchain.git"
   "dir": "kpgchain"
-- "url": "https://github.com/qtumproject/cpp-eth-qtum.git"
-  "dir": "cpp-eth-qtum"
+- "url": "https://github.com/kunpengproject/cpp-ethereum.git"
+  "dir": "cpp-ethereum"
 files: []
 script: |
   set -e -o pipefail
 
   #this is a hack since gitian has no natural support for submodules
   #make sure this file exists... 
-  cp -r cpp-eth-qtum/* kpgchain/src/cpp-ethereum
+  cp -r cpp-ethereum/* kpgchain/src/cpp-ethereum
   cat kpgchain/src/cpp-ethereum/utils/libscrypt/b64.c
 
   WRAP_DIR=$HOME/wrapped

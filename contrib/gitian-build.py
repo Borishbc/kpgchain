@@ -59,20 +59,20 @@ def build():
 
     if args.linux:
         print('\nCompiling ' + args.version + ' Linux')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-eth-qtum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-linux.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-ethereum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-linux', '--destination', '../gitian.sigs/', '../kpgchain/contrib/gitian-descriptors/gitian-linux.yml'])
         subprocess.check_call('mv build/out/kpg-*.tar.gz build/out/src/kpg-*.tar.gz ../kpg-binaries/'+args.version, shell=True)
  
     if args.windows:
         print('\nCompiling ' + args.version + ' Windows')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-eth-qtum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-win.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-ethereum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-win-unsigned', '--destination', '../gitian.sigs/', '../kpgchain/contrib/gitian-descriptors/gitian-win.yml'])
         subprocess.check_call('mv build/out/kpg-*-win-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/kpg-*.zip build/out/kpg-*.exe ../kpg-binaries/'+args.version, shell=True)
 
     if args.macos:
         print('\nCompiling ' + args.version + ' MacOS')
-        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-eth-qtum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-osx.yml'])
+        subprocess.check_call(['bin/gbuild', '-j', args.jobs, '-m', args.memory, '--commit', 'kpgchain='+args.commit+',cpp-ethereum=develop', '--url', 'kpgchain='+args.url, '../kpgchain/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call(['bin/gsign', '-p', args.sign_prog, '--signer', args.signer, '--release', args.version+'-osx-unsigned', '--destination', '../gitian.sigs/', '../kpgchain/contrib/gitian-descriptors/gitian-osx.yml'])
         subprocess.check_call('mv build/out/kpg-*-osx-unsigned.tar.gz inputs/', shell=True)
         subprocess.check_call('mv build/out/kpg-*.tar.gz build/out/kpg-*.dmg ../kpg-binaries/'+args.version, shell=True)
