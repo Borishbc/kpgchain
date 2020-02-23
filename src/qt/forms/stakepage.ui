@@ -82,7 +82,7 @@
         <item row="0" column="0">
          <widget class="QLabel" name="labelAssetsText">
           <property name="text">
-           <string>Staking assets</string>
+           <string>币算力</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -116,7 +116,7 @@
              </sizepolicy>
             </property>
             <property name="text">
-             <string>Stake:</string>
+             <string>挖矿锁定:</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -126,7 +126,7 @@
           <item>
            <widget class="QLabel" name="labelStake">
             <property name="text">
-             <string>0.000 000 00 QTUM</string>
+             <string>0.000 000 00 KPG</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
