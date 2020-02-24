@@ -153,19 +153,20 @@ double GetPoSKernelPS()
 
 double GetEstimatedAnnualROI()
 {
-    double result = 0;
-    double networkWeight = GetPoSKernelPS();
-    CBlockIndex* pindex = pindexBestHeader == 0 ? chainActive.Tip() : pindexBestHeader;
-    int nHeight = pindex ? pindex->nHeight : 0;
-    const Consensus::Params& consensusParams = Params().GetConsensus();
-    double subsidy = GetBlockSubsidy(nHeight, consensusParams);
-    if(networkWeight > 0)
-    {
-        // Formula: 100 * 675 blocks/day * 365 days * subsidy) / Network Weight
-        result = 24637500 * subsidy / networkWeight;
-    }
-
-    return result;
+    return 5.0f;
+//    double result = 0;
+//    double networkWeight = GetPoSKernelPS();
+//    CBlockIndex* pindex = pindexBestHeader == 0 ? chainActive.Tip() : pindexBestHeader;
+//    int nHeight = pindex ? pindex->nHeight : 0;
+//    const Consensus::Params& consensusParams = Params().GetConsensus();
+//    double subsidy = GetBlockSubsidy(nHeight, consensusParams);
+//    if(networkWeight > 0)
+//    {
+//        // Formula: 100 * 1350 blocks/day * 365 days * subsidy) / Network Weight
+//        result = 49275000 * subsidy / networkWeight;
+//    }
+//
+//    return result;
 }
 
 static int ComputeNextBlockAndDepth(const CBlockIndex* tip, const CBlockIndex* blockindex, const CBlockIndex*& next)
