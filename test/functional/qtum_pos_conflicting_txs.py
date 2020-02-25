@@ -57,7 +57,7 @@ class QtumPOSConflictingStakingMempoolTxTest(BitcoinTestFramework):
         time_until_next_valid_block = int(self.nodes[0].getblock(self.nodes[0].getbestblockhash())['time'] - 16)
         self.nodes[0].setmocktime(time_until_next_valid_block)
 
-        # Allow the qtum staker some time to run (since we set a mocktime the time will not advance)
+        # Allow the KPG staker some time to run (since we set a mocktime the time will not advance)
         time.sleep(80)
 
         # Now the staker will have found a valid staking block and is waiting to publish it to the network

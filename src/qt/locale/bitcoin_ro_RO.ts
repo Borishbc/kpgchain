@@ -888,7 +888,7 @@
         <translation>Form</translation>
     </message>
     <message>
-        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the qtum network, as detailed below.</source>
+        <source>Recent transactions may not yet be visible, and therefore your wallet's balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the KPG network, as detailed below.</source>
         <translation>Tranzactiile recente pot sa nu fie inca vizibile, de aceea balanta portofelului poate fi incorecta. Aceasta informatie va fi corecta de indata ce portofelul va fi complet sincronizat cu reteaua KPG, asa cum este detaliat mai jos.</translation>
     </message>
     <message>
@@ -1215,7 +1215,7 @@
     </message>
     <message>
         <source>The supplied proxy address is invalid.</source>
-        <translation>Adresa qtum pe care aţi specificat-o nu este validă.</translation>
+        <translation>Adresa KPG pe care aţi specificat-o nu este validă.</translation>
     </message>
 </context>
 <context>
@@ -2288,7 +2288,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
     </message>
     <message>
         <source>Warning: Invalid KPG address</source>
-        <translation>Atenţie: Adresa qtum nevalidă!</translation>
+        <translation>Atenţie: Adresa KPG nevalidă!</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
@@ -2331,7 +2331,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
     </message>
     <message>
         <source>The KPG address to send the payment to</source>
-        <translation>Adresa qtum către care se face plata</translation>
+        <translation>Adresa KPG către care se face plata</translation>
     </message>
     <message>
         <source>Alt+A</source>
@@ -2351,7 +2351,7 @@ Nota: Cum taxa este calculata per byte, o taxa de "100 satoshi per kB" pentru o 
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive less qtums than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
-        <translation>Taxa va fi scazuta in suma trimisa. Destinatarul va primi mai putini qtum decat ati specificat in campul sumei trimise. Daca au fost selectati mai multi destinatari, taxa se va imparti in mod egal.</translation>
+        <translation>Taxa va fi scazuta in suma trimisa. Destinatarul va primi mai putini KPG decat ati specificat in campul sumei trimise. Daca au fost selectati mai multi destinatari, taxa se va imparti in mod egal.</translation>
     </message>
     <message>
         <source>S&amp;ubtract fee from amount</source>

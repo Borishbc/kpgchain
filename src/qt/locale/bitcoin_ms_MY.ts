@@ -386,7 +386,7 @@ Alihkan fail data ke dalam tab semasa</translation>
     </message>
     <message>
         <source>Sign messages with your KPG addresses to prove you own them</source>
-        <translation>sahkan mesej bersama alamat qtum anda untuk menunjukkan alamat ini anda punya</translation>
+        <translation>sahkan mesej bersama alamat KPG anda untuk menunjukkan alamat ini anda punya</translation>
     </message>
     <message>
         <source>Verify messages to ensure they were signed with specified KPG addresses</source>

@@ -6327,7 +6327,7 @@ bool LoadExternalBlockFile(const CChainParams& chainparams, FILE* fileIn, CDiskB
                 }
 
                 // In Bitcoin this only needed to be done for genesis and at the end of block indexing
-                // But for Qtum PoS we need to sync this after every block to ensure txdb is populated for
+                // But for KPG PoS we need to sync this after every block to ensure txdb is populated for
                 // validating PoS proofs
                 {
                     CValidationState state;

@@ -52,7 +52,7 @@ class WalletTest(BitcoinTestFramework):
         assert_equal(len(self.nodes[0].listunspent()), 0)
         assert_equal(len(self.nodes[1].listunspent()), 0)
 
-        self.log.info("We use a third node here that sends 50 qtum to each of the two other nodes to keep compatibility with bitcoin")
+        self.log.info("We use a third node here that sends 50 KPG to each of the two other nodes to keep compatibility with bitcoin")
 
         self.nodes[2].generate(1)
         self.sync_all()

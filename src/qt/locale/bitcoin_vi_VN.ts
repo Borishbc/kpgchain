@@ -63,7 +63,7 @@
     </message>
     <message>
         <source>These are your KPG addresses for sending payments. Always check the amount and the receiving address before sending coins.</source>
-        <translation>Đây là các địa chỉ KPG để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ qtum của người nhận.</translation>
+        <translation>Đây là các địa chỉ KPG để gửi bạn gửi tiền. Trước khi gửi bạn nên kiểm tra lại số tiền bạn muốn gửi và địa chỉ KPG của người nhận.</translation>
     </message>
     <message>
         <source>These are your KPG addresses for receiving payments. It is recommended to use a new receiving address for each transaction.</source>
