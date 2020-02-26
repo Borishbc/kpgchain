@@ -66,7 +66,7 @@ static vector<CScript> superStakers = {
 //   quantities so as to generate blocks faster, degrading the system back into
 //   a proof-of-work situation.
 //
-bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeBlock, const CScript& scriptPubKey, uint256& hashProofOfStake, uint256& targetProofOfStake, bool fPrintProofOfStake)
+bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t blockFromTime, CAmount prevoutValue, const COutPoint& prevout, unsigned int nTimeBlock, uint256& hashProofOfStake, uint256& targetProofOfStake, bool isSuperStaker, bool fPrintProofOfStake)
 {
     if (nTimeBlock < blockFromTime)  // Transaction timestamp violation
         return error("CheckStakeKernelHash() : nTime violation");
@@ -98,7 +98,7 @@ bool CheckStakeKernelHash(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t 
             hashProofOfStake.ToString());
     }
 
-    if (superStakers.empty() || nTimeBlock < (pindexPrev->nTime + 64) || std::find(superStakers.begin(), superStakers.end(), scriptPubKey) == superStakers.end()) {
+    if (!isSuperStaker || nTimeBlock < (pindexPrev->nTime + 64)) {
         if (UintToArith256(hashProofOfStake) > bnTarget) return false;
     }
 
@@ -128,9 +128,12 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, CValidationState& state, const C
         return state.DoS(100, error("CheckProofOfStake() : Stake prevout does not exist %s", txin.prevout.hash.ToString()));
     }
 
-    if(pindexPrev->nHeight + 1 - coinPrev.nHeight < COINBASE_MATURITY){
+    bool isSuperStaker = !superStakers.empty() && std::find(superStakers.begin(), superStakers.end(), coinPrev.out.scriptPubKey) != superStakers.end();
+
+    if(!isSuperStaker && (pindexPrev->nHeight + 1 - coinPrev.nHeight < COINBASE_MATURITY)){
         return state.DoS(100, error("CheckProofOfStake() : Stake prevout is not mature, expecting %i and only matured to %i", COINBASE_MATURITY, pindexPrev->nHeight + 1 - coinPrev.nHeight));
     }
+
     CBlockIndex* blockFrom = pindexPrev->GetAncestor(coinPrev.nHeight);
     if(!blockFrom) {
         return state.DoS(100, error("CheckProofOfStake() : Block at height %i for prevout can not be loaded", coinPrev.nHeight));
@@ -140,8 +143,7 @@ bool CheckProofOfStake(CBlockIndex* pindexPrev, CValidationState& state, const C
     if (!VerifySignature(coinPrev, txin.prevout.hash, tx, 0, SCRIPT_VERIFY_NONE))
         return state.DoS(100, error("CheckProofOfStake() : VerifySignature failed on coinstake %s", tx.GetHash().ToString()));
 
-
-    if (!CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, txin.prevout, nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
+    if (!CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, txin.prevout, nTimeBlock, hashProofOfStake, targetProofOfStake, isSuperStaker, LogInstance().WillLogCategory(BCLog::COINSTAKE)))
         return state.DoS(1, error("CheckProofOfStake() : INFO: check kernel failed on coinstake %s, hashProof=%s", tx.GetHash().ToString(), hashProofOfStake.ToString())); // may occur during initial download or if behind on block chain sync
 
     return true;
@@ -251,12 +253,15 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBloc
         }
     }
 
+    bool isSuperStaker = !superStakers.empty() && (std::find(superStakers.begin(), superStakers.end(), coinPrev.out.scriptPubKey) != superStakers.end());
+
     auto it=cache.find(prevout);
     if(it == cache.end()) {
         //not found in cache (shouldn't happen during staking, only during verification which does not use cache)
-        if(pindexPrev->nHeight + 1 - coinPrev.nHeight < COINBASE_MATURITY){
+        if (!isSuperStaker && (pindexPrev->nHeight + 1 - coinPrev.nHeight < COINBASE_MATURITY)) {
             return error("CheckKernel(): Coin not matured");
         }
+
         CBlockIndex* blockFrom = pindexPrev->GetAncestor(coinPrev.nHeight);
         if(!blockFrom) {
             return error("CheckKernel(): Could not find block");
@@ -266,12 +271,12 @@ bool CheckKernel(CBlockIndex* pindexPrev, unsigned int nBits, uint32_t nTimeBloc
         }
 
         return CheckStakeKernelHash(pindexPrev, nBits, blockFrom->nTime, coinPrev.out.nValue, prevout,
-                                    nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake);
+                                    nTimeBlock, hashProofOfStake, targetProofOfStake, isSuperStaker);
     }else{
         //found in cache
         const CStakeCache& stake = it->second;
         if(CheckStakeKernelHash(pindexPrev, nBits, stake.blockFromTime, stake.amount, prevout,
-                                    nTimeBlock, coinPrev.out.scriptPubKey, hashProofOfStake, targetProofOfStake)){
+                                    nTimeBlock, hashProofOfStake, targetProofOfStake, isSuperStaker)){
             //Cache could potentially cause false positive stakes in the event of deep reorgs, so check without cache also
             return CheckKernel(pindexPrev, nBits, nTimeBlock, prevout, view);
         }
