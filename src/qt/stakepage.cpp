@@ -86,8 +86,10 @@ void StakePage::setWalletModel(WalletModel *model)
 void StakePage::setBalance(const interfaces::WalletBalances& balances)
 {
     int unit = walletModel->getOptionsModel()->getDisplayUnit();
+    uint64_t nWeight= walletModel->getStakeWeight();
+
     m_balances = balances;
-    ui->labelAssets->setText(BitcoinUnits::formatWithUnit(unit, balances.balance, false, BitcoinUnits::separatorAlways));
+    ui->labelAssets->setText(BitcoinUnits::formatWithUnit(unit, nWeight, false, BitcoinUnits::separatorAlways));
     ui->labelStake->setText(BitcoinUnits::formatWithUnit(unit, balances.stake, false, BitcoinUnits::separatorAlways));
 }
 
