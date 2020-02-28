@@ -142,6 +142,8 @@ public:
         vSeeds.emplace_back("m1.kunpeng.network"); // KPG mainnet
         vSeeds.emplace_back("m2.kunpeng.network");
         vSeeds.emplace_back("m3.kunpeng.network");
+        vSeeds.emplace_back("m4.kunpeng.network");
+        vSeeds.emplace_back("m5.kunpeng.network");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,45); // K
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,56); // P
