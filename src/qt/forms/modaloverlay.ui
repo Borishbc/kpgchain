@@ -414,7 +414,7 @@
                   <enum>Qt::LeftToRight</enum>
                  </property>
                  <property name="text">
-                  <string>Wallet backup prompt</string>
+                  <string>钱包备份提醒</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -424,8 +424,8 @@
                <item row="1" column="1">
                 <widget class="QLabel" name="labelMessage">
                  <property name="text">
-                  <string>Please backup your wallet as soon
-Please make sure to keep an updated antivirus and operating system. We can not recover Your funds if you visit phishing site or lose your backup. Please make sure to keep backups of your private keys or files. We do not store your private keys on this wallet. And you as a user, are entirely responsible for your funds and your own security.</string>
+                  <string>请尽快备份您的钱包
+                   如果您访问钓鱼网站或丢失备份，我们将无法挽回您的损失。 请为钱包设置密码并且将钱包文件备份在安全的地方(永远不要备份到网盘里！！！)。 作为用户，您需要对您的资金和自己的安全负全部责任。</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
