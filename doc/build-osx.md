@@ -152,7 +152,7 @@ To create a tarball suitable for Gitian input, there are two options:
 Using macOS, you can mount the dmg, and then create it with:
 ```
   $ hdiutil attach Xcode_7.3.1.dmg
-  $ tar -C /Volumes/Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/ -czf MacOSX10.11.sdk.tar.gz MacOSX10.11.sdk
+  $ tar -C /Volumes/Xcode/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/ -czf MacOSX10.11.sdk.tar.xz MacOSX10.11.sdk
 ```
 
 Alternatively, you can use 7zip and SleuthKit to extract the files one by one.
