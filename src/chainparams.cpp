@@ -144,6 +144,12 @@ public:
         vSeeds.emplace_back("m3.kunpeng.network");
         vSeeds.emplace_back("m4.kunpeng.network");
         vSeeds.emplace_back("m5.kunpeng.network");
+        
+        // in case dns resolve issie
+        vSeeds.emplace_back("199.192.27.141");
+        vSeeds.emplace_back("63.250.44.189");
+        vSeeds.emplace_back("18.162.40.132");
+
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,45); // K
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,56); // P
