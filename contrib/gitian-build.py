@@ -31,7 +31,7 @@ def setup():
     if not os.path.isdir('kpgchain'):
         subprocess.check_call(['git', 'clone', 'https://github.com/kunpengproject/kpgchain.git'])
     os.chdir('gitian-builder')
-    make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64']
+    make_image_prog = ['bin/make-base-vm', '--suite', 'bionic', '--arch', 'amd64', '--disksize', '22287']
     if args.docker:
         make_image_prog += ['--docker']
     elif not args.kvm:
