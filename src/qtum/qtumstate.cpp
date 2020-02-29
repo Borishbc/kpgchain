@@ -31,6 +31,8 @@ ResultExecute QtumState::execute(EnvInfo const& _envInfo, SealEngineFace const& 
     h256 oldStateRoot = rootHash();
     h256 oldUTXORoot = rootHashUTXO();
     bool voutLimit = false;
+    m_createdContracts.clear();
+    m_destructedContracts.clear();
 
 	auto onOp = _onOp;
 #if ETH_VMTRACE
@@ -122,9 +124,22 @@ ResultExecute QtumState::execute(EnvInfo const& _envInfo, SealEngineFace const& 
             refund.vout.push_back(CTxOut(CAmount(_t.value().convert_to<uint64_t>()), script));
         }
         //make sure to use empty transaction if no vouts made
-        return ResultExecute{ex, KPGTransactionReceipt(oldStateRoot, oldUTXORoot, gas, e.logs()), refund.vout.empty() ? CTransaction() : CTransaction(refund)};
+        return ResultExecute{
+                    ex,
+                    KPGTransactionReceipt(oldStateRoot, oldUTXORoot, gas, e.logs(), {}, {}),
+                    refund.vout.empty() ? CTransaction() : CTransaction(refund)};
     }else{
-        return ResultExecute{res, KPGTransactionReceipt(rootHash(), rootHashUTXO(), startGasUsed + e.gasUsed(), e.logs()), tx ? *tx : CTransaction()};
+        if (res.excepted == dev::eth::TransactionException::None)
+            return ResultExecute{
+                    res,
+                    KPGTransactionReceipt(rootHash(), rootHashUTXO(), startGasUsed + e.gasUsed(), e.logs(), std::move(m_createdContracts), std::move(m_destructedContracts)),
+                    tx ? *tx : CTransaction()};
+        else
+            return ResultExecute{
+                    res,
+                    KPGTransactionReceipt(rootHash(), rootHashUTXO(), startGasUsed + e.gasUsed(), e.logs(), {}, {}),
+                    tx ? *tx : CTransaction()
+            };
     }
 }
 
