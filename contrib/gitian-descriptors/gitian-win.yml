@@ -1,5 +1,5 @@
 ---
-name: "kpg-win-0.0.1"
+name: "kpg-win-0.0.2"
 enable_cache: true
 suites:
 - "bionic"
