@@ -37,11 +37,11 @@ QRCToken::QRCToken(const PlatformStyle *platformStyle, QWidget *parent) :
     m_tokenTransactionView->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
     ui->tokenViewLayout->addWidget(m_tokenTransactionView);
 
-    QAction *copySenderAction = new QAction(tr("Copy receive address"), this);
-    QAction *copyTokenBalanceAction = new QAction(tr("Copy token balance"), this);
-    QAction *copyTokenNameAction = new QAction(tr("Copy token name"), this);
-    QAction *copyTokenAddressAction = new QAction(tr("Copy contract address"), this);
-    QAction *removeTokenAction = new QAction(tr("Remove token"), this);
+    QAction *copySenderAction = new QAction("拷贝收币地址", this);
+    QAction *copyTokenBalanceAction = new QAction("拷贝代币余额", this);
+    QAction *copyTokenNameAction = new QAction("拷贝代币名称", this);
+    QAction *copyTokenAddressAction = new QAction("拷贝合约地址", this);
+    QAction *removeTokenAction = new QAction("移除代币", this);
 
     m_tokenList = new TokenListWidget(platformStyle, this);
     m_tokenList->setContextMenuPolicy(Qt::CustomContextMenu);

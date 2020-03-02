@@ -14,7 +14,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Receive</string>
+   <string>接收</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_4">
    <property name="leftMargin">
@@ -127,7 +127,7 @@
         <item>
          <widget class="QLabel" name="labelTokenAddressText">
           <property name="text">
-           <string>Address</string>
+           <string>地址</string>
           </property>
          </widget>
         </item>
