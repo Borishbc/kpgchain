@@ -670,7 +670,7 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel)
         {
             QString link = QString("<a href=%1>%2</a>").arg(QTUM_RELEASES, QTUM_RELEASES);
             QString message(tr("New version of KPG wallet is available on the KPG source code repository: <br /> %1. <br />It is recommended to download it and update this application").arg(link));
-            QMessageBox::information(this, tr("Check for updates"), message);
+            QMessageBox::information(this, "检查更新", message);
         }
 
         // Create system tray menu (or setup the dock menu) that late to prevent users from calling actions,

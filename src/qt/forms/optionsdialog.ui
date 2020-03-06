@@ -95,7 +95,7 @@
          <item row="2" column="0">
           <widget class="QLabel" name="reserveBalanceLabel">
            <property name="text">
-            <string>Reserve</string>
+            <string>保留金额</string>
            </property>
            <property name="textFormat">
             <enum>Qt::PlainText</enum>
@@ -325,21 +325,21 @@
           <item>
            <widget class="QCheckBox" name="zeroBalanceAddressToken">
             <property name="text">
-             <string>Enable &amp;zero balance for receiver token address</string>
+             <string>允许将余额为零的地址作为代币收款地址</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="useChangeAddress">
             <property name="text">
-             <string>Use change &amp;address</string>
+             <string>使用找零地址</string>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="checkForUpdates">
             <property name="text">
-             <string>Check for &amp;updates</string>
+             <string>检查更新</string>
             </property>
            </widget>
           </item>

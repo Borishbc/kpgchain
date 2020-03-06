@@ -914,18 +914,15 @@ Note:  Since the fee is calculated on a per-byte basis, a fee of "100 satoshis p
     </message>
     <message>
         <source>Rebuild blockchain index</source>
-        <translation>重新扫描 – 重新扫描区块链，以查找遗漏的交易。
-         修复遗漏交易、低余额问题。</translation>
+        <translation>重新扫描区块链，以查找遗漏的交易。</translation>
     </message>
     <message>
         <source>Recover transactions without metadata</source>
-        <translation>zapwallettxes=2 - 恢复没有元数据的交易。
-         修复同时出现遗漏交易、低余额、孤儿块以及分叉链的问题。执行此命令后再次备份钱包</translation>
+        <translation>恢复没有元数据的交易。修复同时出现遗漏交易、低余额、孤儿块以及分叉链的问题。</translation>
     </message>
     <message>
         <source>Delete the local copy of the block chain</source>
-        <translation>删除区块链数据 - 删除区块链本地副本，重新同步整个区块链的数据。
-         修复区块链同步、区块链受损、分叉链问题。</translation>
+        <translation>删除区块链数据 - 删除区块链本地副本，重新同步整个区块链的数据。</translation>
     </message>
     <message>
         <source>The wallet.dat will be restored from the selected location and the Qt Wallet will be restarted with the -reindex, -zapwallettxes=2 or -deleteblockchaindata option.</source>

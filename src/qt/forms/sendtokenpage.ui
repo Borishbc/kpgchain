@@ -233,7 +233,7 @@
       <item>
        <widget class="QPushButton" name="clearButton">
         <property name="text">
-         <string>Cancel</string>
+         <string>取消</string>
         </property>
        </widget>
       </item>
@@ -256,7 +256,7 @@
       <item>
        <widget class="QPushButton" name="confirmButton">
         <property name="text">
-         <string>Send</string>
+         <string>发送</string>
         </property>
        </widget>
       </item>
