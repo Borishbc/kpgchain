@@ -1,5 +1,5 @@
 [Desktop Entry]
-Version=0.0.2
+Version=0.0.3
 Name=KPG Core Testnet
 Comment=Connect to the KPG P2P Network Testnet
 Exec=kpg-qt -testnet %u
