@@ -323,9 +323,9 @@ std::map<int, ScriptsElement> scriptsMap;
 
 unsigned int GetStakeMaxCombineInputs() { return 100; }
 
-int64_t GetStakeCombineThreshold() { return 1000 * COIN; }
+int64_t GetStakeCombineThreshold() { return 3000 * COIN; }
 
-unsigned int GetStakeSplitOutputs() { return 2; }
+unsigned int GetStakeSplitOutputs() { return 10; }
 
 int64_t GetStakeSplitThreshold() { return GetStakeSplitOutputs() * GetStakeCombineThreshold(); }
 
