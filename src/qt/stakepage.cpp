@@ -102,6 +102,13 @@ void StakePage::on_checkStake_clicked(bool checked)
 
     if(checked && WalletModel::Locked == walletModel->getEncryptionStatus())
         Q_EMIT requireUnlock(true);
+
+    // Keep up to date with wallet
+    if (checked) {
+        interfaces::Wallet& wallet = this->walletModel->wallet();
+        interfaces::WalletBalances balances = wallet.getBalances();
+        setBalance(balances);
+    }
 }
 
 void StakePage::updateDisplayUnit()
